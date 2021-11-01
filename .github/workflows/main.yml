@@ -28,9 +28,8 @@ jobs:
         with:
             key: ${{ secrets.SSH_PRIVATE_KEY }}
             known_hosts: ${{ secrets.KNOWN_HOSTS }}
-      - name: Check ssh
-        run: ls ~
-
+      - name: check parent
+        run: ls ..
       # Runs a single command using the runners shell
       - name: Clones vogsphere git repository
-        run: git clone git@vogsphere-v2.hive.fi:vogsphere/intra-uuid-e316d83e-1410-4d3f-a8ca-52616a576b5b-3864454 libft_vogsphere
+        run: cd .. && git clone git@vogsphere-v2.hive.fi:vogsphere/intra-uuid-e316d83e-1410-4d3f-a8ca-52616a576b5b-3864454 libft_vogsphere
