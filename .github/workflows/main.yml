@@ -23,6 +23,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2
+        with:
+            key: ${{ secret.SSH_PRIVATE_KEY }}
+
       # Runs a single command using the runners shell
       - name: Clones vogsphere git repository
         run: git clone git@vogsphere-v2.hive.fi:vogsphere/intra-uuid-e316d83e-1410-4d3f-a8ca-52616a576b5b-3864454 libft_vogsphere
