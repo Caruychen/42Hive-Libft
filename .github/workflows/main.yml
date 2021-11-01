@@ -39,5 +39,5 @@ jobs:
         run: |
             cd ../libft_vogsphere
             git add *
-            git commit -m ${{ github.event.head_commit.message }}
+            git commit -m "${{ github.event.head_commit.message }}"
             git push
