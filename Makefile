@@ -6,7 +6,7 @@
 #    By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 13:07:54 by cchen             #+#    #+#              #
-#    Updated: 2021/11/01 13:55:58 by cchen            ###   ########.fr        #
+#    Updated: 2021/11/01 14:39:23 by cchen            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,3 +30,10 @@ fclean: clean
 	/bin/rm $(NAME)
 
 re: fclean all
+
+prod:
+	gcc -Wall -Wextra -Werror -c $(patsubst  %, $(SRCS)ft_%.c, $(FUNCTIONS)) -I$(INCLUDES)
+	ar -rc $(NAME) $(OBJECTS)
+	ranlib $(NAME)
+
+prod-re: fclean prod
