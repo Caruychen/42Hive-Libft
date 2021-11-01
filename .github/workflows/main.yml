@@ -28,6 +28,8 @@ jobs:
         with:
             key: ${{ secrets.SSH_PRIVATE_KEY }}
             known_hosts: ${{ secrets.KNOWN_HOSTS }}
+      - name: Check ssh
+        run: ls ~/.ssh
 
       # Runs a single command using the runners shell
       - name: Clones vogsphere git repository
