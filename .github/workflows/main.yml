@@ -37,8 +37,6 @@ jobs:
             REPO_NAME: ${{ github.event.repository.name }}
         run: |
             cd ..
-            env
-            echo $REPO_NAME
             /bin/bash ./42Hive-Libft/deploy_vogsphere.sh
       # Add, Commit and Push to vogsphere
       - name: Add, commit, and push
