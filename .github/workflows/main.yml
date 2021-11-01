@@ -34,7 +34,7 @@ jobs:
       # Copy files into vogsphere repository
       - name: Run shell script to copy files into vogsphere repository
         env:
-            REPO_NAME: ${{ github.even.repository.name }}
+            REPO_NAME: ${{ github.event.repository.name }}
         run: |
             cd ..
             env
