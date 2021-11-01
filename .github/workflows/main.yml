@@ -34,3 +34,10 @@ jobs:
       # Copy files into vogsphere repository
       - name: Run shell script to copy files into vogsphere repository
         run: cd .. && /bin/bash ./42Hive-Libft/deploy_vogsphere.sh
+      # Add, Commit and Push to vogsphere
+      - name: Add, commit, and push
+        run: |
+            cd ../libft_vogsphere
+            git add *
+            git commit -m ${{ github.event.head_commit.message }}
+            git push
