@@ -30,6 +30,9 @@ jobs:
             known_hosts: ${{ secrets.KNOWN_HOSTS }}
       - name: check parent
         run: ls ..
-      # Runs a single command using the runners shell
+      # Clone vogsphere git repository
       - name: Clones vogsphere git repository
         run: cd .. && git clone git@vogsphere-v2.hive.fi:vogsphere/intra-uuid-e316d83e-1410-4d3f-a8ca-52616a576b5b-3864454 libft_vogsphere
+      # Copy files into vogsphere repository
+      - name: Run shell script to copy files into vogsphere repository
+        run: /bin/bash ./42Hive_Libft/deploy_vogsphere.sh
