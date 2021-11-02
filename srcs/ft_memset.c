@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 13:21:26 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/01 15:11:07 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/02 11:47:14 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ void	*ft_memset(void *b, int c, size_t len)
 	index = 0;
 	while (index < len)
 		((unsigned char *)b)[index++] = (unsigned char)c;
-	return (0);
+	return (b);
 }
