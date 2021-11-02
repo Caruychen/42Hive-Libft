@@ -6,3 +6,7 @@
 This is the first real project by Hive students in their training towards a software engineering career.
 
 Given many of the usual C library functions are forbidden by the 42 school curriculum, we re-code many of these fundamental functions. These student made functions can be reused in our C projects in the future. As we recreate these lines of code from the C library, students gain a deeper understanding of the fundamentals of C. 
+
+To read more about the project, you can find the pdf [here](https://github.com/Caruychen/42Hive-Libft/blob/main/libft.en.pdf)
+
+
