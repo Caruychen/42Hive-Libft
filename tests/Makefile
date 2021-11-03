@@ -6,14 +6,14 @@
 #    By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 11:41:26 by cchen             #+#    #+#              #
-#    Updated: 2021/11/03 11:53:18 by cchen            ###   ########.fr        #
+#    Updated: 2021/11/03 19:48:10 by cchen            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = test
 UNITS = units/
 INCLUDES = includes/
-FUNCTIONS = test_memset
+FUNCTIONS = test_memset test_bzero
 
 all: $(NAME)
 
