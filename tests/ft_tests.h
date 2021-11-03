@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 10:37:17 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/03 11:39:17 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/03 14:56:49 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <string.h>
 # include <stdlib.h>
+# include <stdio.h>
 # include "libft.h"
 
 int	test_memset(void);
