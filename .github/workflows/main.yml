@@ -52,3 +52,4 @@ jobs:
             git add *
             git commit -m "${{ github.event.head_commit.message }}"
             git push
+        if: ${{ grep -Fxq "nothing to commit" steps.git-status.output.GIT_STATUS }}
