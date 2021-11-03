@@ -47,7 +47,9 @@ jobs:
       - name: Add, commit, and push
         if: "!contains(steps.git-status.outputs.GIT_STATUS, 'nothing to commit')"
         run: |
-            echo ${{ steps.git-status-outputs.GIT_STATUS }}
+            echo "hello"
+            echo "${{ steps.git-status-outputs.GIT_STATUS }}"
+            echo "world"
             cd ../intra-uuid-*
             git config --global user.email "${{ secrets.USER_EMAIL }}"
             git config --global user.name "${{ secrets.USER_NAME }}"
