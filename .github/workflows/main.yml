@@ -41,11 +41,11 @@ jobs:
       - name: Check git status
         run: |
             cd ../intra-uuid-*
-            echo "::set-output name=GIT_STATUS::nothing to commit"
+            echo "::set-output name=GIT_STATUS::$(git status -s)"
         id: git-status
       # Add, Commit and Push to vogsphere
       - name: Add, commit, and push
-        if: "!contains(steps.git-status.outputs.GIT_STATUS, 'nothing to commit')"
+        if: steps.git-status.outputs.GIT_STATUS != ""
         run: |
             echo "hello"
             echo "${{ steps.git-status-outputs.GIT_STATUS }}"
