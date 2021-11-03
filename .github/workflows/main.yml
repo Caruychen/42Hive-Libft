@@ -44,7 +44,7 @@ jobs:
         id: git-status
       # Add, Commit and Push to vogsphere
       - name: Add, commit, and push
-        if: contains(steps.git-status.output.GIT_STATUS, 'nothing to commit')
+        if: "!contains(steps.git-status.output.GIT_STATUS, 'nothing to commit')"
         run: |
             echo "the output of git status is: ${{ steps.git-status.output.GIT_STATUS }}"
             cd ../intra-uuid-*
