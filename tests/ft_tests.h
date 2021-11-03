@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_main.c                                        :+:      :+:    :+:   */
+/*   ft_tests.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/01 14:48:24 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/03 10:53:27 by cchen            ###   ########.fr       */
+/*   Created: 2021/11/03 10:37:17 by cchen             #+#    #+#             */
+/*   Updated: 2021/11/03 11:39:17 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_tests.h"
+#ifndef FT_TESTS_H
+# define FT_TESTS_H
 
-int	ft_run_tests(void)
-{
-	test_memset();
-	return (0);
-}
+# include <string.h>
+# include <stdlib.h>
+# include "libft.h"
 
-int	main(void)
-{
-	ft_run_tests();
-	return (0);
-}
+int	test_memset(void);
+
+#endif
