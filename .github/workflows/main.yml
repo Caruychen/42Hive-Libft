@@ -45,7 +45,7 @@ jobs:
         id: git-status
       # Add, Commit and Push to vogsphere
       - name: Add, commit, and push
-        if: steps.git-status.outputs.GIT_STATUS != ""
+        if: steps.git-status.outputs.GIT_STATUS != ''
         run: |
             echo "hello"
             echo "${{ steps.git-status-outputs.GIT_STATUS }}"
