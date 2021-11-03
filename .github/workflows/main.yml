@@ -45,7 +45,7 @@ jobs:
       # Add, Commit and Push to vogsphere
       - name: Add, commit, and push
         run: |
-            echo "status is: $[{ steps.git-status.output.GIT_STATUS }}"
+            echo "status is: ${{ steps.git-status.output.GIT_STATUS }}"
             cd ../intra-uuid-*
             git config --global user.email "${{ secrets.USER_EMAIL }}"
             git config --global user.name "${{ secrets.USER_NAME }}"
