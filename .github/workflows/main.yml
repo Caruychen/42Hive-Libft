@@ -38,6 +38,9 @@ jobs:
         run: |
             cd ..
             /bin/bash ./${{ env.REPO_NAME }}/deploy_vogsphere.sh
+      - name: id
+	run: echo ::set-output name=key::value
+      - if: steps.id.outputs.key = 'value'
       # Add, Commit and Push to vogsphere
       - name: Add, commit, and push
         run: |
