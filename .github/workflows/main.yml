@@ -46,9 +46,9 @@ jobs:
         id: git-status
       # Add, Commit and Push to vogsphere
       - name: Add, commit, and push
-        if: "!contains(steps.git-status.output.GIT_STATUS, 'nothing to commit')"
+        if: "!contains(steps.git-status.outputs.GIT_STATUS, 'nothing to commit')"
         run: |
-            echo ${{ steps.git-status.output.GIT_STATUS }}
+            echo ${{ steps.git-status.outputs.GIT_STATUS }}
             cd ../intra-uuid-*
             git config --global user.email "${{ secrets.USER_EMAIL }}"
             git config --global user.name "${{ secrets.USER_NAME }}"
