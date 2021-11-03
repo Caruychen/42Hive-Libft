@@ -43,7 +43,7 @@ jobs:
             cd ../intra-uuid-*
             git status
             echo "::set-output name=GIT_STATUS::git status"
-            echo ${{ steps }}
+            echo ${{ steps.git-status }}
         id: git-status
       # Add, Commit and Push to vogsphere
       - name: Add, commit, and push
