@@ -1,28 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   testft.h                                           :+:      :+:    :+:   */
+/*   test_memchr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 11:01:07 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/04 20:38:31 by cchen            ###   ########.fr       */
+/*   Created: 2021/11/04 20:39:26 by cchen             #+#    #+#             */
+/*   Updated: 2021/11/04 21:40:44 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TESTFT_H
-# define TESTFT_H
+#include "testft.h"
 
-# include <string.h>
-# include <stdlib.h>
-# include <stdio.h>
-# include "libft.h"
+int	run_comparison(const void *s, int c, size_t n)
+{
+	void	*ret1;
+	void	*ret2;
 
-int	test_memset(void);
-int	test_bzero(void);
-int	test_memcpy(void);
-int	test_memccpy(void);
-int	test_memmove(void);
-int	test_memchr(void);
+	ret1 = memchr(s, c, n);
+	ret2 = ft_memchr(s, c, n);
+	if (ret1 != ret2)
+	{
+		printf("FAILED: Error in test_memchr\n");
+		return (-1);
+	}
+	return (0);
+}
 
-#endif
+int	test_memchr(void)
+{
+	char	s1[] = "Hello";
+	char	s2[] = "";
+
+	run_comparison(s1, 'H', 6);
+	run_comparison(s2, 'H', 0);
+	return (0);
+}

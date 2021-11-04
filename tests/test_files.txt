@@ -1,4 +1,5 @@
 test_memmove
+test_memchr
 test_memset
 test_memcpy
 test_bzero
