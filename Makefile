@@ -6,14 +6,14 @@
 #    By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 13:07:54 by cchen             #+#    #+#              #
-#    Updated: 2021/11/04 19:54:49 by cchen            ###   ########.fr        #
+#    Updated: 2021/11/04 20:30:51 by cchen            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 SRCS = srcs/
 INCLUDES = includes/
-FUNCTIONS = memset bzero memcpy memccpy memmove
+FUNCTIONS = memset bzero memcpy memccpy memmove memchr
 OBJECTS = $(patsubst %, ft_%.o, $(FUNCTIONS))
 
 all: $(NAME)
