@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 10:40:42 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/04 11:03:03 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/04 16:22:26 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,7 @@ int	test_memset(void)
 			return (-1);
 		++index;
 	}
+	free(controlStr);
+	free(testStr);
 	return (0);
 }
