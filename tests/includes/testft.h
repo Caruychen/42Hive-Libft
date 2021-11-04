@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 11:01:07 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/04 11:03:50 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/04 15:36:21 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@
 int	test_memset(void);
 int	test_bzero(void);
 int	test_memcpy(void);
+int	test_memccpy(void);
 
 #endif

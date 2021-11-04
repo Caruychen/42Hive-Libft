@@ -1,3 +1,4 @@
 test_bzero
+test_memccpy
 test_memcpy
 test_memset
