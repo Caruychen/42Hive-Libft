@@ -6,11 +6,11 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 15:06:00 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/04 10:18:03 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/04 12:59:15 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_tests.h"
+#include "testft.h"
 
 static	void	init_str_arr(char *s1, char *s2, int length)
 {
@@ -39,7 +39,7 @@ static	void	init_int_arr(int *s1, int *s2, int length)
 }
 
 static	int	execute_test(void *s1, void *s2, int length)
-{	
+{
 	bzero(s1, length);
 	ft_bzero(s2, length);
 	if (memcmp(s1, s2, length) != 0)
@@ -58,11 +58,13 @@ int	test_bzero(void)
 	int		controlInt[42];
 	int		testInt[42];
 	int		length;
+	int		outcome;
 
+	outcome = 0;
 	length = 42;
 	init_str_arr(controlStr, testStr, length);
 	init_int_arr(controlInt, testInt, length);
-	execute_test(controlStr, testStr, length);
-	execute_test(controlInt, testInt, length);
-	return (0);
+	outcome = execute_test(controlStr, testStr, length);
+	outcome = execute_test(controlInt, testInt, sizeof(int) * length) || outcome;
+	return (-outcome);
 }

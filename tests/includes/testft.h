@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tests.h                                         :+:      :+:    :+:   */
+/*   testft.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/03 10:37:17 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/03 19:39:23 by cchen            ###   ########.fr       */
+/*   Created: 2021/11/04 11:01:07 by cchen             #+#    #+#             */
+/*   Updated: 2021/11/04 11:03:50 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_TESTS_H
-# define FT_TESTS_H
+#ifndef TESTFT_H
+# define TESTFT_H
 
 # include <string.h>
 # include <stdlib.h>
@@ -20,5 +20,6 @@
 
 int	test_memset(void);
 int	test_bzero(void);
+int	test_memcpy(void);
 
 #endif

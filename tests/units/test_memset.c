@@ -6,11 +6,11 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 10:40:42 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/03 14:56:19 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/04 11:03:03 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_tests.h"
+#include "testft.h"
 
 static void	initialize_string(char **str, int length)
 {
