@@ -5,3 +5,4 @@ test_memcmp
 test_memcpy
 test_memmove
 test_memset
+test_strlen

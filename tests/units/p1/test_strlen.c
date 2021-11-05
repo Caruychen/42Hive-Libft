@@ -1,41 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_main.c                                        :+:      :+:    :+:   */
+/*   test_strlen.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/01 14:48:24 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/05 14:43:23 by cchen            ###   ########.fr       */
+/*   Created: 2021/11/05 14:41:48 by cchen             #+#    #+#             */
+/*   Updated: 2021/11/05 14:56:35 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "testft.h"
 
-int	ft_run_tests(void)
+static int	iterate_comparisons(char **arr)
 {
-	int	(*ft_ptr_arr[])(void) = {
-		test_memset,
-		test_bzero,
-		test_memcpy,
-		test_memccpy,
-		test_memmove,
-		test_memchr,
-		test_memcmp,
-		test_strlen,
-		0};
-	int	index;
-
-	index = 0;
-	while (ft_ptr_arr[index])
+	while (*arr != 0)
 	{
-		ft_ptr_arr[index++]();
-	}		
-	printf("TESTS OK!\n");
+		if (strlen(*arr) != ft_strlen(*arr))
+		{
+			printf("FAILED: Error at ft_strlen when comaring %s\n", *arr);
+			return (-1);
+		}
+		++arr;
+	}
 	return (0);
 }
 
-int	main(void)
+int	test_strlen(void)
 {
-	return (ft_run_tests());
+	int	outcome;
+	char *arr[] = {"Hello World", "Hello\0World", "", "\0", "0", 0};
+
+	iterate_comparisons(arr);
+	outcome = 0;
+	return (-outcome);
 }
