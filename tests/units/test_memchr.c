@@ -6,13 +6,13 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 20:39:26 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/05 09:36:00 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/05 10:42:57 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "testft.h"
 
-int	run_comparison(const void *s, int c, size_t n)
+static int	run_comparison(const void *s, int c, size_t n)
 {
 	void	*ret1;
 	void	*ret2;
@@ -27,7 +27,7 @@ int	run_comparison(const void *s, int c, size_t n)
 	return (0);
 }
 
-int	iterate_tests(const void *s, int c, size_t n)
+static int	iterate_tests(const void *s, int c, size_t n)
 {
 	size_t	index;
 	int	res;
@@ -46,14 +46,16 @@ int	test_memchr(void)
 {
 	char	s1[] = "foo bar";
 	char	s2[] = "";
+	int	outcome;
 
-	iterate_tests(s1, 'f', 8);
-	iterate_tests(s2, 'f', 8);
-	iterate_tests(s1, 'b', 8);
-	iterate_tests(s2, 'b', 8);
-	iterate_tests(s1, 'x', 8);
-	iterate_tests(s2, 'x', 8);
-	iterate_tests(s1, 0, 8);
-	iterate_tests(s2, 0, 8);
-	return (0);
+	outcome = 0;
+	outcome = iterate_tests(s1, 'f', 8) || outcome;
+	outcome = iterate_tests(s2, 'f', 8) || outcome;
+	outcome = iterate_tests(s1, 'b', 8) || outcome;
+	outcome = iterate_tests(s2, 'b', 8) || outcome;
+	outcome = iterate_tests(s1, 'x', 8) || outcome;
+	outcome = iterate_tests(s2, 'x', 8) || outcome;
+	outcome = iterate_tests(s1, 0, 8) || outcome;
+	outcome = iterate_tests(s2, 0, 8) || outcome;
+	return (-outcome);
 }

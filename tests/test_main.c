@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 14:48:24 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/04 20:39:05 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/05 10:06:58 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	ft_run_tests(void)
 		test_memccpy,
 		test_memmove,
 		test_memchr,
+		test_memcmp,
 		0};
 	int	index;
 

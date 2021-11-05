@@ -3,4 +3,5 @@ test_memchr
 test_memset
 test_memcpy
 test_bzero
+test_memcmp
 test_memccpy

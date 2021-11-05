@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 10:40:42 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/04 16:22:26 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/05 10:43:31 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static int	compare_strings(char *s1, char *s2, int length)
 	return (0);
 }
 
-int	cycle_chars(char *s1, char *s2, int index, int length)
+static int	cycle_chars(char *s1, char *s2, int index, int length)
 {
 	int	currentInt;
 	int	maxInt;
