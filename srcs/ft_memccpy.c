@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 15:08:09 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/04 15:30:45 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/05 13:53:32 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	unsigned char		*d;
-	const unsigned char	*s;
+	void			*ptr;
+	unsigned	int c_len;
 
 	if (n == 0 || dst == src)
 		return (NULL);
-	d = (unsigned char *)dst;
-	s = (const unsigned char *)src;
-	while (n--)
+	ptr = ft_memchr(src, c, n);
+	if (ptr != NULL)
 	{
-		if ((*d++ = *s++) == c)
-			return ((void *)d);
+		c_len = ptr - src + 1;
+		return (ft_memcpy(dst, src, c_len) + c_len);
 	}
+	ft_memcpy(dst, src, n);
 	return (NULL);
 }
