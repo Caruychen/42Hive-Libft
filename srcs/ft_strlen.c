@@ -6,15 +6,15 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 12:51:20 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/05 13:05:37 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/05 14:55:18 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
-	int	length;
+	size_t	length;
 
 	length = 0;
 	while (*s++ != 0)
