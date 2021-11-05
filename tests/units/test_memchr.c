@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 20:39:26 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/04 21:40:44 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/05 09:36:00 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,33 @@ int	run_comparison(const void *s, int c, size_t n)
 	return (0);
 }
 
+int	iterate_tests(const void *s, int c, size_t n)
+{
+	size_t	index;
+	int	res;
+
+	index = 0;
+	while (index < n)
+	{
+		if ((res = run_comparison(s, c, index)) == -1)
+			return (res);
+		++index;
+	}
+	return (0);
+}
+
 int	test_memchr(void)
 {
-	char	s1[] = "Hello";
+	char	s1[] = "foo bar";
 	char	s2[] = "";
 
-	run_comparison(s1, 'H', 6);
-	run_comparison(s2, 'H', 0);
+	iterate_tests(s1, 'f', 8);
+	iterate_tests(s2, 'f', 8);
+	iterate_tests(s1, 'b', 8);
+	iterate_tests(s2, 'b', 8);
+	iterate_tests(s1, 'x', 8);
+	iterate_tests(s2, 'x', 8);
+	iterate_tests(s1, 0, 8);
+	iterate_tests(s2, 0, 8);
 	return (0);
 }
