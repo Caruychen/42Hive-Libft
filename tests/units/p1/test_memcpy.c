@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 11:11:26 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/04 19:22:24 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/05 17:47:08 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,37 @@ static int	test_overlap(void)
 	}
 	return (0);
 }
+/*
+static void	demo_memcpy(void)
+{
+	char s1[] = "abcde";
+	char s2[] = "abcde";
+	void *ret1 = memcpy(s1 + 2, s1, sizeof(char) * 3);
+	void *ret2 = memmove(s2 + 2, s2, sizeof(char) * 3);
+	printf("Original string: abcde\n");
+	printf("Source after memcpy: %s\n", s1);
+	printf("Source of memmove: %s\n", s2);
+	printf("Return from memcpy: %s\n", ret1);
+	printf("Return from memmove: %s\n", ret2);
+}
+*/
+static void	demo_memcpy(void)
+{
+	char i1[] = "012345";
+//	char i2[] = "0123456789";
+//	char i3[] = "0123456789";
+
+	printf("original 1: %s\n", i1);
+//	printf("original 2: %s\n", i2);
+//	printf("original 3: %s\n", i3);
+	memcpy(i1 + 2, i1, 5);
+//	ft_memcpy(i2 + 2, i2, 9);
+//	memmove(i3 + 2, i3, 9);
+	printf("res: %p, %s\n", i1, i1);
+//	printf("res: %p, %s\n", i2, i2);
+//	printf("res: %p, %s\n", i3, i3);
+//	printf("%ld, %ld, %ld", i1 - i2, i2 - i3, i3 - i3);
+}
 
 int	test_memcpy(void)
 {
@@ -126,5 +157,6 @@ int	test_memcpy(void)
 	outcome = test_chars(src, controlDest, testDest, 10) || outcome;
 	outcome = test_ints(i_src, i_controlDest, i_testDest, 10) || outcome;
 	outcome = test_overlap() || outcome;
+	demo_memcpy();
 	return (-outcome);
 }	
