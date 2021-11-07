@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 15:34:37 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/05 13:51:05 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/07 15:07:43 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ static int	test_chars_from_src(char *src, char *controlDest, char *testDest, int
 		|| memcmp(controlDest, testDest, 5) != 0)
 	{
 		printf("FAILED: Error at ft_memccpy with test_chars_from_src\n");
-		printf("%s, %s\n", ret1, ret2);
+		printf("%p, %p\n", ret1, ret2);
 		printf("%p, %p\n", ret1, ret2);
 		printf("%s, %s\n", controlDest, testDest);
 		printf("%p, %p\n", controlDest, testDest);

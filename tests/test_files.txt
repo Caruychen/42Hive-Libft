@@ -1,8 +1,9 @@
-test_bzero
-test_memccpy
-test_memchr
-test_memcmp
-test_memcpy
-test_memmove
-test_memset
-test_strlen
+p2/test_putchar
+p1/test_memmove
+p1/test_memchr
+p1/test_memset
+p1/test_memcpy
+p1/test_bzero
+p1/test_strlen
+p1/test_memcmp
+p1/test_memccpy
