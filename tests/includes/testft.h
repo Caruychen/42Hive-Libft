@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 11:01:07 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/08 13:06:35 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/08 14:40:15 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ int	test_strlen(void);
 int	test_putchar(void);
 int	test_putstr(void);
 int	test_putchar_fd(void);
+int	test_putstr_fd(void);
 
 #endif
