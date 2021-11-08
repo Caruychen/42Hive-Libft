@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 14:41:48 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/05 14:56:35 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/08 11:52:12 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	test_strlen(void)
 	int	outcome;
 	char *arr[] = {"Hello World", "Hello\0World", "", "\0", "0", 0};
 
-	iterate_comparisons(arr);
 	outcome = 0;
+	outcome = iterate_comparisons(arr) || outcome;
 	return (-outcome);
 }

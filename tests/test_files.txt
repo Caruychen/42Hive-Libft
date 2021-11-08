@@ -7,3 +7,4 @@ p1/test_memmove
 p1/test_memset
 p1/test_strlen
 p2/test_putchar
+p2/test_putstr
