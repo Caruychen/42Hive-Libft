@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 08:54:23 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/08 10:59:52 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/08 11:21:32 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,12 @@ static void	ft_copy_trail(unsigned char **dst,
 	unsigned int	trail;
 
 	chunk = n / sizeof(int);
-	trail = n % sizeof(int); 
+	trail = n % sizeof(int);
 	if (chunk)
 		*(*(unsigned int **)dst)++ = *(*(const unsigned int **)src)++;
 	if (trail / sizeof(short))
 		*(*(unsigned short **)dst)++ = *(*(const unsigned short **)src)++;
-	if  (n % sizeof(short))
+	if (n % sizeof(short))
 		*(*dst)++ = *(*src)++;
 }
 
