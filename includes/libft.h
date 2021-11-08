@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 13:39:10 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/08 11:35:39 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/08 13:09:03 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ size_t	ft_strlen(const char *s);
 char	*ft_strdup(const char *s1);
 void	ft_putchar(char c);
 void	ft_putstr(char const *s);
+void	ft_putchar_fd(char c, int fd);
 
 #endif
