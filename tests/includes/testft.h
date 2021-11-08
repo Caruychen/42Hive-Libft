@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 11:01:07 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/08 11:57:13 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/08 13:06:35 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <string.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include <fcntl.h>
 # include "libft.h"
 
 int	test_memset(void);
@@ -28,5 +29,6 @@ int	test_memcmp(void);
 int	test_strlen(void);
 int	test_putchar(void);
 int	test_putstr(void);
+int	test_putchar_fd(void);
 
 #endif
