@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 11:11:26 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/07 21:29:23 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/08 10:59:50 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,64 +111,64 @@ static int	test_overlap(void)
 	char	t8[] = "123456781234567";
 
 	printf("%s\n", s1);
-	memcpy(s1+ 1, s1, 8);
-	ft_memcpy(t1+ 1, t1, 8);
+	memcpy(s1+ 2, s1, 7);
+	ft_memcpy(t1+ 2, t1, 7);
 	ft_putnstr(s1, 9);
 	ft_putchar('\n');
 	ft_putnstr(t1, 9);
 	ft_putchar('\n');
 
 	printf("%s\n", s2);
-	memcpy(s2+ 1, s2, 9);
-	ft_memcpy(t2+ 1, t2, 9);
+	memcpy(s2+ 2, s2, 8);
+	ft_memcpy(t2+ 2, t2, 8);
 	ft_putnstr(s2, 10);
 	ft_putchar('\n');
 	ft_putnstr(t2, 10);
 	ft_putchar('\n');
 
 	printf("%s\n", s3);
-	memcpy(s3+ 1, s3, 10);
-	ft_memcpy(t3+ 1, t3, 10);
+	memcpy(s3+ 2, s3, 9);
+	ft_memcpy(t3+ 2, t3, 9);
 	ft_putnstr(s3, 11);
 	ft_putchar('\n');
 	ft_putnstr(t3, 11);
 	ft_putchar('\n');
 
 	printf("%s\n", s4);
-	memcpy(s4+ 1, s4, 11);
-	ft_memcpy(t4+ 1, t4, 11);
+	memcpy(s4+ 2, s4, 10);
+	ft_memcpy(t4+ 2, t4, 10);
 	ft_putnstr(s4, 12);
 	ft_putchar('\n');
 	ft_putnstr(t4, 12);
 	ft_putchar('\n');
 
 	printf("%s\n", s5);
-	memcpy(s5+ 1, s5, 12);
-	ft_memcpy(t5+ 1, t5, 12);
+	memcpy(s5+ 2, s5, 11);
+	ft_memcpy(t5+ 2, t5, 11);
 	ft_putnstr(s5, 13);
 	ft_putchar('\n');
 	ft_putnstr(t5, 13);
 	ft_putchar('\n');
 
 	printf("%s\n", s6);
-	memcpy(s6+ 1, s6, 13);
-	ft_memcpy(t6+ 1, t6, 13);
+	memcpy(s6+ 2, s6, 12);
+	ft_memcpy(t6+ 2, t6, 12);
 	ft_putnstr(s6, 14);
 	ft_putchar('\n');
 	ft_putnstr(t6, 14);
 	ft_putchar('\n');
 
 	printf("%s\n", s7);
-	memcpy(s7+ 1, s7, 14);
-	ft_memcpy(t7+ 1, t7, 14);
+	memcpy(s7+ 2, s7, 13);
+	ft_memcpy(t7+ 2, t7, 13);
 	ft_putnstr(s7, 15);
 	ft_putchar('\n');
 	ft_putnstr(t7, 15);
 	ft_putchar('\n');
 
 	printf("%s\n", s8);
-	memcpy(s8+ 1, s8, 15);
-	ft_memcpy(t8+ 1, t8, 15);
+	memcpy(s8+ 2, s8, 14);
+	ft_memcpy(t8+ 2, t8, 14);
 	ft_putnstr(s8, 16);
 	ft_putchar('\n');
 	ft_putnstr(t8, 16);
