@@ -15,7 +15,7 @@ P1 = p1/
 P2 = p2/
 INCLUDES = includes/
 FUNCTIONS1 = memset bzero memcpy memccpy memmove memchr memcmp strlen
-FUNCTIONS2 = putchar
+FUNCTIONS2 = putchar putstr
 OBJECTS = $(patsubst %, ft_%.o, $(FUNCTIONS1) $(FUNCTIONS2))
 
 all: $(NAME)
