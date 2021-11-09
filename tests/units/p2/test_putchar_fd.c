@@ -6,13 +6,13 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 12:53:32 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/08 14:27:54 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/09 12:40:18 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "testft.h"
 
-int	test_char(const unsigned char c)
+static int	test_char(const unsigned char c)
 {
 	int		fd;
 	unsigned char	res;
@@ -47,7 +47,7 @@ int	test_char(const unsigned char c)
 	return (outcome);
 }
 
-int cycle_char_tests(void)
+static int cycle_char_tests(void)
 {
 	unsigned char	max = 255;
 	unsigned char	index = 0;
