@@ -6,16 +6,90 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 15:51:15 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/07 16:04:54 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/09 15:00:16 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "testft.h"
 
+static void	init_redirect(int *file_desc, int *copy_out)
+{
+	*file_desc = open("temp", O_RDWR|O_CREAT|O_TRUNC, 0666);
+	*copy_out = dup(fileno(stdout));
+	dup2(*file_desc, fileno(stdout));
+}
+
+static void	reset_output(int *copy_out)
+{
+	dup2(*copy_out, fileno(stdout));
+	close(*copy_out);
+}
+
+static void	clean_up(FILE * file)
+{
+	if (fclose(file))
+	{
+		fprintf(stderr, "Cannot close temp file\n");
+		exit (1);
+	}
+	if (remove ("temp"))
+	{
+		fprintf(stderr, "Cannot remove temp file\n");
+		exit (1);
+	}
+}
+
+static int	compare_results(const unsigned char c, const int fd)
+{
+	FILE		*file;
+	unsigned char	res;
+
+	file = fdopen(fd, "r");
+	rewind(file);
+	fscanf(file, "%c", &res);
+	if (res != c)
+	{
+		printf("FAILED: Error in ft_putchar\n");
+		printf("Used char %c (%d), but got %c (%d)\n", c, c, res, res);
+		return (-1);
+	}
+	clean_up(file);
+	return (0);
+}
+
+static int	test_char(const unsigned char c)
+{
+	int		file_desc;
+	int		copy_out;
+	int		outcome;
+
+	outcome = 0;
+	init_redirect(&file_desc, &copy_out);
+	ft_putchar(c);
+	reset_output(&copy_out);
+	outcome = compare_results(c, file_desc);
+	return (outcome);
+}
+
+static int	cycle_char_tests(void)
+{
+	unsigned char max = 255;
+	unsigned char index = 0;
+
+	while (index < max)
+	{
+		if (test_char(index) == -1)
+			return (-1);
+		++index;
+	}
+	return (0);
+}
+
 int	test_putchar(void)
 {
-//	char	a = 'a';
+	int	outcome;
 
-//	ft_putchar(a);
-	return (0);
+	outcome = 0;
+	outcome = cycle_char_tests() || outcome;
+	return (-outcome);
 }
