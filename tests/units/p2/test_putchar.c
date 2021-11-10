@@ -6,24 +6,11 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/07 15:51:15 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/09 15:00:16 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/10 10:47:57 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "testft.h"
-
-static void	init_redirect(int *file_desc, int *copy_out)
-{
-	*file_desc = open("temp", O_RDWR|O_CREAT|O_TRUNC, 0666);
-	*copy_out = dup(fileno(stdout));
-	dup2(*file_desc, fileno(stdout));
-}
-
-static void	reset_output(int *copy_out)
-{
-	dup2(*copy_out, fileno(stdout));
-	close(*copy_out);
-}
 
 static void	clean_up(FILE * file)
 {

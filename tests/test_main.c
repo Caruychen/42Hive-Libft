@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 14:48:24 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/08 14:40:32 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/10 10:12:04 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	ft_run_tests(void)
 	int	(*ft_ptr_arr2[])(void) = {
 		test_putchar,
 		test_putstr,
+		test_putendl,
 		test_putchar_fd,
 		test_putstr_fd,
 		0};

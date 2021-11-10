@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_putstr.c                                      :+:      :+:    :+:   */
+/*   test_putendl.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 11:36:22 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/10 11:12:56 by cchen            ###   ########.fr       */
+/*   Created: 2021/11/10 10:12:15 by cchen             #+#    #+#             */
+/*   Updated: 2021/11/10 10:54:02 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,31 @@ static int	compare_results(const char *str, const int fd)
 {
 	FILE	*file;
 	char	*res;
-	size_t	length = strlen(str) + 1;
+	size_t	length = strlen(str) + 2;
 	int	outcome;
 
 	outcome = 0;
 	res = (char *)malloc(sizeof(*res) * length);
 	file = fdopen(fd, "r");
 	rewind(file);
-	getdelim(&res, &length, 0, file);
-	if (memcmp(str, res, length) != 0)
+	fgets(res, length, file);
+	if (memcmp(str, res, length - 2) != 0)
 	{
-		printf("FAILED: Error in ft_putstr\n");
-		printf("Used: %s\n Got: %s\n", str, res);
+		printf("FAILED: Error in ft_putendl\n");
+		printf("Content of string is different.\nUsed: %s\n Got: %s\n", str, res);
+		outcome = -1;
+	}
+	if (res[length] != '\n')
+	{
+		printf("FAILED: Error in ft_putendl\n");
+		printf("Output of ft_putendl does not end with newline\n");
 		outcome = -1;
 	}
 	fr_clean_up(file, res);
 	return (outcome);
 }
 
-static int	test_str(const char *str)
+static int	test_str(const char *str, void (*f_ptr)(const char *s))
 {
 	int	file_desc;
 	int	copy_out;
@@ -42,36 +48,30 @@ static int	test_str(const char *str)
 
 	outcome = 0;
 	init_redirect(&file_desc, &copy_out);
-	ft_putstr(str);
+	f_ptr(str);
 	reset_output(&copy_out);
 	outcome = compare_results(str, file_desc);
 	return (outcome);
-}
+}	
 
 static int	cycle_str_tests(void)
 {
 	int	index;
 	char	*arr[] = {
 		"Hello World",
-		"Foo",
-		"",
-		"\n",
-		"\0",
-		"\t",
-		"\nHello\n\tWorld",
 		0};
-	
+
 	index = 0;
 	while (arr[index])
 	{
-		if (test_str(arr[index]) == -1)
+		if (test_str(arr[index], ft_putendl) == -1)
 			return (-1);
 		++index;
 	}
 	return (0);
 }
 
-int	test_putstr(void)
+int		test_putendl(void)
 {
 	int	outcome;
 

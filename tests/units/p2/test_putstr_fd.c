@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 14:37:10 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/08 15:37:59 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/10 09:31:26 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ static FILE *write_temp_file(const char *str)
 	return (file);
 }
 
-static int	compare_strings(const char *s1, const char *s2, size_t length)
+static int	compare_strings(const char *res, const char *str, size_t length)
 {
-	if (memcmp(s1, s2, length) != 0)
+	if (memcmp(res, str, length) != 0)
 	{
 		printf("FAILED: Error in ft_putstr_fd\n");
-		printf("Used %s, but got %s from file\n", s1, s2);
+		printf("Used %s, but got %s from file\n", str, res);
 		return (-1);
 	}
 	return (0);

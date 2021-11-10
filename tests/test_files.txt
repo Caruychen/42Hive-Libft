@@ -2,6 +2,8 @@ p2/test_putchar
 p2/test_putstr
 p2/test_putchar_fd
 p2/test_putstr_fd
+p2/test_putendl
+utils/stdout_redirect
 p1/test_memmove
 p1/test_memchr
 p1/test_memset
