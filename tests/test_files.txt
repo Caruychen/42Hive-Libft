@@ -1,6 +1,7 @@
 p2/test_putchar
 p2/test_putstr
 p2/test_putendl_fd
+p2/test_putnbr
 p2/test_putchar_fd
 p2/test_putstr_fd
 p2/test_putendl
