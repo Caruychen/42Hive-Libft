@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 10:12:15 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/10 10:54:02 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/10 11:21:05 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ static int	compare_results(const char *str, const int fd)
 	res = (char *)malloc(sizeof(*res) * length);
 	file = fdopen(fd, "r");
 	rewind(file);
-	fgets(res, length, file);
+	getdelim(&res, &length, 0, file);
 	if (memcmp(str, res, length - 2) != 0)
 	{
 		printf("FAILED: Error in ft_putendl\n");
 		printf("Content of string is different.\nUsed: %s\n Got: %s\n", str, res);
 		outcome = -1;
 	}
-	if (res[length] != '\n')
+	if (res[length-2] != '\n')
 	{
 		printf("FAILED: Error in ft_putendl\n");
 		printf("Output of ft_putendl does not end with newline\n");
@@ -59,6 +59,11 @@ static int	cycle_str_tests(void)
 	int	index;
 	char	*arr[] = {
 		"Hello World",
+		"\n",
+		"\t",
+		"\nHello",
+		"\nHello\n",
+		"\nFoo\nBar\n",
 		0};
 
 	index = 0;
