@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_putnbr.c                                      :+:      :+:    :+:   */
+/*   test_putnbr_fd.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 22:23:04 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/11 11:07:05 by cchen            ###   ########.fr       */
+/*   Created: 2021/11/11 10:57:15 by cchen             #+#    #+#             */
+/*   Updated: 2021/11/11 11:21:20 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "testft.h"
 
-static int	check_putnbr_result(const int num, const int fd)
+static int	check_putnbr_result_fd(const int num, const int fd)
 {
 	FILE	*file;
 	char	*res;
@@ -22,11 +22,11 @@ static int	check_putnbr_result(const int num, const int fd)
 	outcome = 0;
 	file = fdopen(fd, "r");
 	length = fseek(file, 0L, SEEK_SET);
-	res = (char *)malloc(sizeof(*res) * length);
+	res = (char *)malloc(sizeof(*res) * length);	
 	getdelim(&res, &length, 0, file);
 	if (atoi(res) != num)
 	{
-		printf("FAILED: Error in ft_putnbr\n");
+		printf("FAILED: Error in ft_putnbr_fd\n");
 		printf("Expected: %d\n Got: %s\n", num, res);
 		outcome = -1;
 	}
@@ -34,20 +34,18 @@ static int	check_putnbr_result(const int num, const int fd)
 	return (outcome);
 }
 
-static int	test_int(const int num, void (*f_ptr)(int n))
+static int	test_int_fd(const int num, void (*f_ptr)(int n, int fd))
 {
-	int		file_desc;
-	int		copy_out;
-	int		outcome;
+	int	fd;
+	int	outcome;
 
-	init_redirect(&file_desc, &copy_out);
-	f_ptr(num);
-	reset_output(&copy_out);
-	outcome = check_putnbr_result(num, file_desc);
+	init_file(&fd);
+	f_ptr(num, fd);
+	outcome = check_putnbr_result_fd(num, fd);
 	return (outcome);
 }
 
-static int	cycle_int_tests(void)
+static int	cycle_int_tests_fd(void)
 {
 	int	nums[] = {
 		0,
@@ -66,17 +64,18 @@ static int	cycle_int_tests(void)
 
 	while (index < max)
 	{
-		if (test_int(nums[index], ft_putnbr) == -1)
+		if (test_int_fd(nums[index], ft_putnbr_fd) == -1)
 			return (-1);
 		++index;
 	}
 	return (0);
 }
 
-int	test_putnbr(void)
+
+int			test_putnbr_fd(void)
 {
 	int	outcome = 0;
 
-	outcome = cycle_int_tests() || outcome;
+	outcome = cycle_int_tests_fd() || outcome;
 	return (outcome);
 }

@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 14:48:24 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/10 22:26:58 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/11 10:58:20 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int	ft_run_tests(void)
 		test_putnbr,
 		test_putchar_fd,
 		test_putstr_fd,
+		test_putnbr_fd,
 		0};
 	int	index;
 

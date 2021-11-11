@@ -6,20 +6,11 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 12:55:41 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/10 15:34:23 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/11 11:21:09 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "testft.h"
-
-static void	init_file(int *fd)
-{
-	if ((*fd = open("temp", O_CREAT|O_TRUNC|O_RDWR, 0666)) == -1)
-	{
-		fprintf(stderr, "Cannot open temp file\n");
-		exit (1);
-	}
-}
 
 static int	check_result(const char *str, int fd)
 {
