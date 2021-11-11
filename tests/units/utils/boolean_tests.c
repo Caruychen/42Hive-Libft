@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 13:09:48 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/11 14:01:42 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/11 14:18:47 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,3 +28,17 @@ int	test_char_is(const char c, const char *f_name, int (*ft_fptr)(int c), int (*
 	}
 	return (outcome);
 }
+
+int	cycle_char_is_tests(const char *f_name, int (*ft_fptr)(int c), int (*fptr)(int c))
+{
+	int	c = 0;
+	int	max = 512;
+
+	while (c < max)
+	{
+		if (test_char_is(c++, f_name, ft_fptr, fptr) == -1)
+			return (-1);
+	}
+	return (0);
+}
+

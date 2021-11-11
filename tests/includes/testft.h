@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 11:01:07 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/11 14:00:21 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/11 14:11:04 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 
 // Utilities
 int		test_char_is(const char c, const char *f_name, int (*ft_fptr)(int c), int (*fptr)(int c));
+int		cycle_char_is_tests(const char *f_name, int (*ft_fptr)(int c), int (*fptr)(int c));
 void	init_redirect(int *file_desc, int *copy_out);
 void	reset_output(int *copy_out);
 void	fr_clean_up(FILE *file, char *res);
@@ -37,6 +38,7 @@ int	test_memchr(void);
 int	test_memcmp(void);
 int	test_strlen(void);
 int	test_isalpha(void);
+int	test_isdigit(void);
 
 // Tests for part 2
 int	test_putchar(void);
