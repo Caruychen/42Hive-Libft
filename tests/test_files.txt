@@ -1,4 +1,5 @@
 p1/test_bzero
+p1/test_isalnum
 p1/test_isalpha
 p1/test_isdigit
 p1/test_memccpy
