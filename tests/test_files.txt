@@ -21,4 +21,5 @@ p1/test_bzero
 p1/test_isascii
 p1/test_strlen
 p1/test_memcmp
+p1/test_isprint
 p1/test_memccpy

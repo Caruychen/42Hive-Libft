@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 11:01:07 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/11 17:10:52 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/11 17:33:02 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int	test_isalpha(void);
 int	test_isdigit(void);
 int	test_isalnum(void);
 int	test_isascii(void);
+int	test_isprint(void);
 
 // Tests for part 2
 int	test_putchar(void);
