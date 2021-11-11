@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 12:55:41 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/11 11:21:09 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/11 17:18:47 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,6 @@ int	test_putendl_fd(void)
 
 	outcome = 0;
 	outcome = cycle_str_tests() || outcome;
+	print_outcome(outcome, __func__);
 	return (-outcome);
 }

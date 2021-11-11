@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 19:33:22 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/04 19:59:00 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/11 17:16:51 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,5 +128,6 @@ int	test_memmove(void)
 	outcome = test_chars(src, controlDest, testDest, 10) || outcome;
 	outcome = test_ints(i_src, i_controlDest, i_testDest, 10) || outcome;
 	outcome = test_overlap() || outcome;
+	print_outcome(outcome, __func__);
 	return (-outcome);
 }

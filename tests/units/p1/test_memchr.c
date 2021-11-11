@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 20:39:26 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/05 10:42:57 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/11 17:16:16 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,6 @@ int	test_memchr(void)
 	outcome = iterate_tests(s2, 'x', 8) || outcome;
 	outcome = iterate_tests(s1, 0, 8) || outcome;
 	outcome = iterate_tests(s2, 0, 8) || outcome;
+	print_outcome(outcome, __func__);
 	return (-outcome);
 }

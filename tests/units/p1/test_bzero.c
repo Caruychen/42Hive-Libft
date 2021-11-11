@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 15:06:00 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/04 12:59:15 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/11 17:14:57 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,6 @@ int	test_bzero(void)
 	init_int_arr(controlInt, testInt, length);
 	outcome = execute_test(controlStr, testStr, length);
 	outcome = execute_test(controlInt, testInt, sizeof(int) * length) || outcome;
+	print_outcome(outcome, __func__);
 	return (-outcome);
 }

@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 10:57:15 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/11 11:21:20 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/11 17:19:04 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,6 @@ int			test_putnbr_fd(void)
 	int	outcome = 0;
 
 	outcome = cycle_int_tests_fd() || outcome;
+	print_outcome(outcome, __func__);
 	return (outcome);
 }

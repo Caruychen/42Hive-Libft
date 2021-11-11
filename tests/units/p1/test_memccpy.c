@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 15:34:37 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/07 15:07:43 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/11 17:16:44 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,5 +136,6 @@ int	test_memccpy(void)
 	outcome = test_chars_from_src(src, controlDest, testDest, 10) || outcome;
 	outcome = test_ints(i_src, i_controlDest, i_testDest, 127, 10) || outcome;
 	outcome = test_ints_from_src(i_src, i_controlDest, i_testDest, 10) || outcome;
+	print_outcome(outcome, __func__);
 	return (-outcome);
 }

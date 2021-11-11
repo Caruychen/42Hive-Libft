@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 09:59:38 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/05 10:41:39 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/11 17:16:28 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,6 @@ int	test_memcmp(void)
 
 	outcome = 0;
 	outcome = iterate_array_tests(arr1, arr2, length) || outcome;
+	print_outcome(outcome, __func__);
 	return (-outcome);
 }

@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 12:57:07 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/11 14:55:17 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/11 17:15:35 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,6 @@ int			test_isalpha(void)
 
 	outcome = 0;
 	outcome = cycle_char_is_tests("ft_isalpha", ft_isalpha, isalpha) || outcome;
+	print_outcome(outcome, __func__);
 	return (-outcome);
 }
