@@ -6,7 +6,7 @@
 #    By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/03 11:41:26 by cchen             #+#    #+#              #
-#    Updated: 2021/11/07 16:03:45 by cchen            ###   ########.fr        #
+#    Updated: 2021/11/11 13:38:23 by cchen            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ PARTS = $(patsubst %, $(UNITS)/%.c, $(FUNCTIONS))
 all: $(NAME)
 
 $(NAME):
-	gcc -Wall -Wextra -Werror test_main.c $(PARTS) -I$(INCLUDES) -I.. -L.. -lft -o $(NAME)
+	gcc -Wall -Wextra -Werror  test_main.c $(PARTS) -I$(INCLUDES) -I.. -L.. -lft -o $(NAME)
 
 fclean:
 	/bin/rm $(NAME)
