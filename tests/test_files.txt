@@ -14,6 +14,7 @@ p1/test_strlen
 p1/test_tolower
 p1/test_toupper
 p2/test_memalloc
+p2/test_memdel
 p2/test_putchar
 p2/test_putchar_fd
 p2/test_putendl
