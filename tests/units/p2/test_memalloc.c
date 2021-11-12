@@ -6,13 +6,13 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 10:42:12 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/12 13:14:04 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/12 13:55:55 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "testft.h"
 
-int	test_fn_with_int(const char *f_name, const int size, void *(*ft_fptr)(size_t size))
+static int	test_fn_with_int(const char *f_name, const int size, void *(*ft_fptr)(size_t size))
 {
 	char	testblock[size];
 	void	*memblock = ft_fptr(size);
@@ -28,7 +28,7 @@ int	test_fn_with_int(const char *f_name, const int size, void *(*ft_fptr)(size_t
 	return (outcome);
 }
 
-int	test_fn_with_invalid(const char *f_name, const int size, void *(*ft_fptr)(size_t size))
+static int	test_fn_with_invalid(const char *f_name, const int size, void *(*ft_fptr)(size_t size))
 {
 	void	*memblock = ft_fptr(size);
 
@@ -41,7 +41,7 @@ int	test_fn_with_invalid(const char *f_name, const int size, void *(*ft_fptr)(si
 	return (0);
 }	
 
-int	cycle_size_tests(const char *f_name, void *(*ft_fptr)(size_t size))
+static int	cycle_size_tests(const char *f_name, void *(*ft_fptr)(size_t size))
 {
 	int	valid[] = {
 		0,
