@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 11:01:07 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/11 17:33:02 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/12 10:52:27 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,11 @@ int	test_isdigit(void);
 int	test_isalnum(void);
 int	test_isascii(void);
 int	test_isprint(void);
+int	test_toupper(void);
+int	test_tolower(void);
 
 // Tests for part 2
+int	test_memalloc(void);
 int	test_putchar(void);
 int	test_putstr(void);
 int	test_putendl(void);

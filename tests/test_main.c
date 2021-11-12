@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 14:48:24 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/11 17:33:17 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/12 10:52:38 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,11 @@ int	ft_run_tests(void)
 		test_isalnum,
 		test_isascii,
 		test_isprint,
+		test_toupper,
+		test_tolower,
 		0};
 	int	(*ft_ptr_arr2[])(void) = {
+		test_memalloc,
 		test_putchar,
 		test_putstr,
 		test_putendl,
