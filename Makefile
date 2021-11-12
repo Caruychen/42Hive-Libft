@@ -14,8 +14,8 @@ SRCS = srcs/
 P1 = p1/
 P2 = p2/
 INCLUDES = includes/
-FUNCTIONS1 = memset bzero memcpy memccpy memmove memchr memcmp strlen isalpha isdigit isalnum isascii isprint
-FUNCTIONS2 = putchar putstr putendl putnbr putchar_fd putstr_fd putendl_fd putnbr_fd
+FUNCTIONS1 = memset bzero memcpy memccpy memmove memchr memcmp strlen isalpha isdigit isalnum isascii isprint toupper tolower
+FUNCTIONS2 = memalloc putchar putstr putendl putnbr putchar_fd putstr_fd putendl_fd putnbr_fd
 OBJECTS = $(patsubst %, ft_%.o, $(FUNCTIONS1) $(FUNCTIONS2))
 
 all: $(NAME)
