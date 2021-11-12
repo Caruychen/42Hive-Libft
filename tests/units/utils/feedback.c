@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 17:00:08 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/11 17:11:23 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/12 13:49:50 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	print_outcome(int outcome, const char *ft_name)
 	char *res = "OK";
 
 	green();
-	if (outcome == -1)
+	if (outcome != 0)
 	{
 		res = "NOT OK! D:";
 		red();
