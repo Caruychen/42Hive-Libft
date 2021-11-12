@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 14:48:24 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/12 14:11:45 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/12 15:34:11 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int	ft_run_tests(void)
 		test_memalloc,
 		test_memdel,
 		test_strnew,
+		test_strdel,
 		test_putchar,
 		test_putstr,
 		test_putendl,
