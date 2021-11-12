@@ -23,6 +23,7 @@ p2/test_putnbr
 p2/test_putnbr_fd
 p2/test_putstr
 p2/test_putstr_fd
+p2/test_strnew
 utils/boolean_tests
 utils/fd_manager
 utils/feedback

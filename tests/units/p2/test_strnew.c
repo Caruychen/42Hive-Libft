@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_memalloc.c                                    :+:      :+:    :+:   */
+/*   test_strnew.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/12 10:42:12 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/12 14:11:07 by cchen            ###   ########.fr       */
+/*   Created: 2021/11/12 14:00:29 by cchen             #+#    #+#             */
+/*   Updated: 2021/11/12 15:21:09 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "testft.h"
 
-static int	test_fn_with_int(const char *f_name, const int size, void *(*ft_fptr)(size_t size))
+static int	test_fn_with_int(const char *f_name, const int size, char *(*ft_fptr)(size_t size))
 {
-	char	testblock[size];
-	void	*memblock = ft_fptr(size);
+	char	testblock[size + 1];
+	char	*memblock = ft_fptr(size);
 	int		outcome = 0;
 
-	bzero(testblock, size);
-	if ((outcome = memcmp(testblock, memblock, size)))
+	bzero(testblock, size + 1);
+	if ((outcome = memcmp(testblock, memblock, size + 1)))
 	{
 		printf("FAILED: Error in %s, found difference of %d\n", f_name, outcome);
+		printf("Did you implement ft_strnew with size + 1?\n");
 		outcome = -1;
 	}
 	free(memblock);
 	return (outcome);
 }
 
-static int	test_fn_with_invalid(const char *f_name, const int size, void *(*ft_fptr)(size_t size))
+static int	test_fn_with_invalid(const char *f_name, const int size, char *(*ft_fptr)(size_t size))
 {
-	void	*memblock = ft_fptr(size);
+	char	*memblock = ft_fptr(size);
 
 	if (memblock != NULL)
 	{
@@ -38,9 +39,9 @@ static int	test_fn_with_invalid(const char *f_name, const int size, void *(*ft_f
 		return (-1);
 	}
 	return (0);
-}	
+}
 
-static int	cycle_size_tests(const char *f_name, void *(*ft_fptr)(size_t size))
+static int	cycle_size_tests(const char *f_name, char *(*ft_fptr)(size_t size))
 {
 	int	valid[] = {
 		0,
@@ -49,27 +50,27 @@ static int	cycle_size_tests(const char *f_name, void *(*ft_fptr)(size_t size))
 		42,
 		60000};
 	int	index = 0;
-	int max = 5;
+	int	max = 5;
 
 	while (index < max)
 	{
-		if(test_fn_with_int(f_name, valid[index], ft_fptr) == -1)
+		if (test_fn_with_int(f_name, valid[index], ft_fptr) == -1)
 			return (-1);
-		if(test_fn_with_int(f_name, sizeof(int) * valid[index], ft_fptr) == -1)
+		if (test_fn_with_int(f_name, sizeof(int) * valid[index], ft_fptr) == -1)
 			return (-1);
 		++index;
 	}
-	if(test_fn_with_invalid(f_name, -1, ft_fptr) == -1)
+	if (test_fn_with_invalid(f_name, -2, ft_fptr) == -1)
 		return (-1);
 	return (0);
 }
 
-int	test_memalloc(void)
+int			test_strnew(void)
 {
 	int	outcome;
 
 	outcome = 0;
-	outcome = cycle_size_tests("ft_memalloc", ft_memalloc) || outcome;
+	outcome = cycle_size_tests("ft_strnew", ft_strnew) || outcome;
 	print_outcome(outcome, __func__);
 	return (outcome);
 }
