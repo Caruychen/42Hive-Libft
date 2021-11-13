@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 11:54:15 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/13 13:23:48 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/13 14:58:25 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,11 @@ static int	run_striter_check(char *str)
 {
 	ft_striter(str, flip_x);
 	if (!is_str_x(str))
+	{
+		printf("FAILED: Error in striter.\n");
+		printf("Expected only x in string, Got %s\n", str); 
 		return (-1);
+	}
 	return (0);
 }
 

@@ -5,6 +5,7 @@ p2/test_memalloc
 p2/test_putendl_fd
 p2/test_memdel
 p2/test_striter
+p2/test_striteri
 p2/test_putnbr
 p2/test_strclr
 p2/test_strdel
