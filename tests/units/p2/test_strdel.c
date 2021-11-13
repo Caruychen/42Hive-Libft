@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 15:28:11 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/12 17:49:56 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/13 11:57:11 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,5 @@ int			test_strdel(void)
 	outcome = 0;
 	outcome = cycle_strdel_tests("ft_strdel", ft_strdel) || outcome;
 	print_outcome(outcome, __func__);
-	return (outcome);
+	return (-outcome);
 }

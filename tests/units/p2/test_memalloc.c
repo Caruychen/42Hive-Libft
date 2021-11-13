@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 10:42:12 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/12 14:11:07 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/13 11:55:29 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,5 @@ int	test_memalloc(void)
 	outcome = 0;
 	outcome = cycle_size_tests("ft_memalloc", ft_memalloc) || outcome;
 	print_outcome(outcome, __func__);
-	return (outcome);
+	return (-outcome);
 }

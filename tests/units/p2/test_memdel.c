@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 13:27:49 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/12 13:50:26 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/13 11:55:40 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,5 @@ int			test_memdel(void)
 	outcome = 0;
 	outcome = cycle_memdel_tests("ft_memdel", ft_memdel) || outcome;
 	print_outcome(outcome, __func__);
-	return (outcome);
+	return (-outcome);
 }

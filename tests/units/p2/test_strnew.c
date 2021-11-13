@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 14:00:29 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/12 15:21:09 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/13 11:57:20 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,5 @@ int			test_strnew(void)
 	outcome = 0;
 	outcome = cycle_size_tests("ft_strnew", ft_strnew) || outcome;
 	print_outcome(outcome, __func__);
-	return (outcome);
+	return (-outcome);
 }

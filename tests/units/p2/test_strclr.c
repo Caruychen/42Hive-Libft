@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 17:29:54 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/12 17:52:38 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/13 11:57:00 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,5 @@ int		test_strclr(void)
 	outcome = 0;
 	outcome = cycle_str_tests("ft_strclr", ft_strclr) || outcome;
 	print_outcome(outcome, __func__);
-	return (outcome);
+	return (-outcome);
 }
