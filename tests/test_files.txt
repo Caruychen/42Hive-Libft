@@ -1,6 +1,7 @@
 p2/test_strnew
 p2/test_putchar
 p2/test_putstr
+p2/test_strmap
 p2/test_memalloc
 p2/test_putendl_fd
 p2/test_memdel
@@ -15,6 +16,7 @@ p2/test_putnbr_fd
 p2/test_putendl
 utils/boolean_tests
 utils/fd_manager
+utils/iterators
 utils/feedback
 utils/stdout_redirect
 p1/test_isalpha

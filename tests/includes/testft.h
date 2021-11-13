@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 11:01:07 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/13 14:58:52 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/13 16:12:54 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	reset_output(int *copy_out);
 void	fr_clean_up(FILE *file, char *res);
 void	init_file(int *fd);
 void	print_outcome(int outcome, const char *ft_name);
+int	iterate_str_arr(char **arr, int (*f)(char *));
 
 // Tests for part 1
 int	test_memset(void);
@@ -54,6 +55,7 @@ int	test_strdel(void);
 int	test_strclr(void);
 int	test_striter(void);
 int	test_striteri(void);
+int	test_strmap(void);
 int	test_putchar(void);
 int	test_putstr(void);
 int	test_putendl(void);

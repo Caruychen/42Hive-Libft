@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 11:54:15 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/13 14:58:25 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/13 16:15:16 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,15 +45,8 @@ static int	cycle_striter_tests(void)
 	char	s2[] = "x";
 	char	s3[] = "Hello World";
 	char	*arr[] = { s1, s2, s3, 0 };
-	int	index = 0;
-	int	outcome = 0;
-
-	while (arr[index])
-	{
-		if (run_striter_check(arr[index++]) == -1)
-			outcome = -1;
-	}
-	return (outcome);
+	
+	return (iterate_str_arr(arr, run_striter_check));
 }
 
 #include "testft.h"
