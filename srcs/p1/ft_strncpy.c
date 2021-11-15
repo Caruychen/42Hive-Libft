@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 12:18:34 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/15 12:40:24 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/15 13:09:25 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,6 @@ char	*ft_strncpy(char *dst, const char *src, size_t len)
 	src_size = ft_strlen(src) + 1;
 	dst = ft_memcpy(dst, src, ft_min_size(src_size, len));
 	if (src_size < len)
-		ft_bzero(dst[src_size], len - src_size);
+		ft_bzero(dst + src_size, len - src_size);
 	return (dst);
 }
