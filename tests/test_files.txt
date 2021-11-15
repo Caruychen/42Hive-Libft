@@ -13,6 +13,7 @@ p1/test_memset
 p1/test_strcpy
 p1/test_strdup
 p1/test_strlen
+p1/test_strncpy
 p1/test_tolower
 p1/test_toupper
 p2/test_memalloc
