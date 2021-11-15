@@ -6,13 +6,13 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 11:27:58 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/15 11:38:33 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/15 13:36:29 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "testft.h"
 
-static int	check_strcpy(const char *s)
+static int	check_strcpy(char *s)
 {
 	char	*res;
 	char	*control;
@@ -42,15 +42,8 @@ static int	cycle_strcpy_tests(void)
 		"\n",
 		"Hello\nWorld",
 		0 };
-	int		index = 0;
-	int		outcome = 0;
 
-	while (arr[index])
-	{
-		if (check_strcpy(arr[index++]) == -1)
-			outcome = -1;
-	}
-	return (outcome);
+	return (iterate_str_arr(arr, check_strcpy));
 }
 
 int			test_strcpy(void)

@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 12:42:47 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/15 13:11:06 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/15 13:40:49 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static int	check_strncpy_with_size(size_t size, const char *s)
 	return (outcome);
 }
 
-static int	check_strncpy(const char *s)
+static int	check_strncpy(char *s)
 {
 	size_t	cur_size;
 	size_t	max;
@@ -72,15 +72,8 @@ static int	cycle_strncpy_tests(void)
 		"0",
 		"Hello\nWorld",
 		0 };
-	int	index = 0;
-	int	outcome = 0;
-
-	while (arr[index])
-	{
-		if (check_strncpy(arr[index++]) == -1)
-			outcome = -1;
-	}
-	return (outcome);
+	
+	return (iterate_str_arr(arr, check_strncpy));
 }
 
 int			test_strncpy(void)
