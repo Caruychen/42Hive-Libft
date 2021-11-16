@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 14:48:24 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/16 08:49:30 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/16 10:11:56 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	ft_run_tests(void)
 		test_strcpy,
 		test_strncpy,
 		test_strcmp,
+		test_strncmp,
 		test_isalpha,
 		test_isdigit,
 		test_isalnum,
