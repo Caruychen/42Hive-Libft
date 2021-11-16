@@ -30,6 +30,7 @@ p2/test_putstr
 p2/test_putstr_fd
 p2/test_strclr
 p2/test_strdel
+p2/test_strequ
 p2/test_striter
 p2/test_striteri
 p2/test_strmap
