@@ -35,6 +35,7 @@ p2/test_striter
 p2/test_striteri
 p2/test_strmap
 p2/test_strmapi
+p2/test_strnequ
 p2/test_strnew
 utils/boolean_tests
 utils/fd_manager
