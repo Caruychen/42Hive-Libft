@@ -10,6 +10,7 @@ p1/test_memcmp
 p1/test_memcpy
 p1/test_memmove
 p1/test_memset
+p1/test_strchr
 p1/test_strcmp
 p1/test_strcpy
 p1/test_strdup
