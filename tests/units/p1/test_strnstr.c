@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 21:23:06 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/17 21:36:31 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/17 22:18:01 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static int	cycle_comparison_lengths(const char *haystack, const char *needle)
 
 static int	cycle_strnstr_tests(void)
 {
-	char	*s = "The quick brown fox,\njumped over the lazy white dog.\
+	char	*s = "browbrown The quick brown fox,\njumped over the lazy white dog.\
 				  The quick brown fox,\njumped over the lazy while dog.\0foo";
 	char	*sub_arr[] = {
 		"The quick brown fox",
