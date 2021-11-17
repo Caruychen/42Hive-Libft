@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 11:17:16 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/17 13:37:25 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/17 21:38:22 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ static int	run_comparison(const char *haystack, const char *needle)
 		printf("FAILED: Error in ft_strstr.\n");
 		printf("Looking for %s in string: %s\n", needle, haystack);
 		printf("Expected: %p, got: %p\n", control, res);
-		printf("Expected: %c, got: %c\n", *control, *res);
 		return (-1);
 	}
 	return (0);
