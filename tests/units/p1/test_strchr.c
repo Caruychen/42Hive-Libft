@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 12:08:12 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/17 10:40:16 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/17 11:18:49 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ static int	run_comparison(const char *s, int c)
 
 static int	cycle_strchr_tests(void)
 {
-	char	*s = "The quick brown fox,\njumped over the lazy white dog.\0foo";
+	char	*s = "The quick brown fox,\njumped over the lazy white dog.\
+				  The quick brown fox,\njumped over the lazy while dog.\0foo";
 
 	return (iterate_chars(s, run_comparison));
 }
