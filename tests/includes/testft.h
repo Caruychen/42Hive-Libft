@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 11:01:07 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/16 12:09:12 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/17 10:45:41 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	init_file(int *fd);
 void	print_outcome(int outcome, const char *ft_name);
 int		iterate_str_arr(char **arr, int (*f)(char *));
 int		iterate_dual_arrays(char **arr1, char **arr2, int length, int (*f)(char *, char *));
+int		iterate_chars(const char *str, int (*f)(const char *, int));
 size_t	get_max(size_t n1, size_t n2);
 size_t	find_max_len(char *s1, char *s2);
 
@@ -46,6 +47,7 @@ int	test_strdup(void);
 int	test_strcpy(void);
 int	test_strncpy(void);
 int	test_strchr(void);
+int	test_strrchr(void);
 int	test_strcmp(void);
 int	test_strncmp(void);
 int	test_isalpha(void);

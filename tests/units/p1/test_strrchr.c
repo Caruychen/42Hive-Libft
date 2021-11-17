@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_strchr.c                                      :+:      :+:    :+:   */
+/*   test_strrchr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 12:08:12 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/17 10:40:16 by cchen            ###   ########.fr       */
+/*   Created: 2021/11/17 10:40:47 by cchen             #+#    #+#             */
+/*   Updated: 2021/11/17 11:01:18 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,30 +17,31 @@ static int	run_comparison(const char *s, int c)
 	char	*res;
 	char	*control;
 
-	res = ft_strchr(s, c);
-	control = strchr(s, c);
+	res = ft_strrchr(s, c);
+	control = strrchr(s, c);
 	if (res != control)
 	{
-		printf("FAILED: Error in ft_strchr.\n");
-		printf("looking for %c (%d) Using string: %s\n", c, c, s);
+		printf("FAILED: Error in ft_strrchr.\n");
+		printf("looking for %c (%d) Using string %s\n", c, c, s);
 		printf("Expected %p, got %p\n", control, res);
 		return (-1);
 	}
 	return (0);
 }
 
-static int	cycle_strchr_tests(void)
+static int	cycle_strrchr_tests(void)
 {
-	char	*s = "The quick brown fox,\njumped over the lazy white dog.\0foo";
+	char	*s = "The quick brown fox,\njumped over the lazy white dog.\
+				  The quick brown fox,\njumped over the lazy while dog.\0foo";
 
 	return (iterate_chars(s, run_comparison));
 }
 
-int	test_strchr(void)
+int			test_strrchr(void)
 {
 	int	outcome = 0;
 
-	outcome = cycle_strchr_tests() || outcome;
+	outcome = cycle_strrchr_tests() || outcome;
 	print_outcome(outcome, __func__);
 	return (-outcome);
 }

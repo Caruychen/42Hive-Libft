@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 16:08:45 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/16 10:11:05 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/17 10:38:07 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,20 @@ int	iterate_dual_arrays(char **arr1, char **arr2, int length, int (*f)(char *, c
 			++index2;
 		}
 		++index1;
+	}
+	return (outcome);
+}
+
+int	iterate_chars(const char *str, int (*f)(const char *, int))
+{
+	int	c_index = 0;
+	int	outcome = 0;
+
+	while (c_index < 256)
+	{
+		if (f(str, c_index) == -1)
+			outcome = -1;
+		++c_index;
 	}
 	return (outcome);
 }
