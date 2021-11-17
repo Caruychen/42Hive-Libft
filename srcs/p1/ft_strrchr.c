@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 10:46:57 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/17 11:04:44 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/17 11:11:52 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,13 @@ char	*ft_strrchr(const char *s, int c)
 	char	ch;
 
 	latest = (char *)0;
+	ch = (char)c;
 	while (1)
 	{
-		ch = *s;
-		if (ch == c)
+		if (*s == ch)
 			latest = (char *)s;
-		if (ch == 0)
+		if (*s == 0)
 			return (latest);
 		++s;
 	}
-	return (latest);
 }
