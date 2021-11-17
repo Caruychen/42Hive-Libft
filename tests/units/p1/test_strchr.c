@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 12:08:12 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/16 12:20:59 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/17 10:17:22 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static int	cycle_strchr_tests(void)
 	int		index = 0;
 	int		outcome = 0;
 	
-	while (index < 265)
+	while (index < 256)
 	{
 		if (run_comparison(s, index) == -1)
 			outcome = -1;
