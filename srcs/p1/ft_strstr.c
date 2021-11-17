@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 13:04:06 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/17 13:37:22 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/17 22:15:44 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,11 @@ char	*ft_strstr(const char *haystack, const char *needle)
 		while (1)
 		{
 			if (*substring == 0)
-				return (haystack_p);
-			if (*haystack++ != *substring++)
+				return ((char *)haystack);
+			if (*haystack_p++ != *substring++)
 				break ;
 		}
+		++haystack;
 		substring = (char *)needle;
 	}
 	return (NULL);
