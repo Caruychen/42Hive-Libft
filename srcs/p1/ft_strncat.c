@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/17 23:02:07 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/18 12:55:29 by cchen            ###   ########.fr       */
+/*   Created: 2021/11/18 12:47:02 by cchen             #+#    #+#             */
+/*   Updated: 2021/11/18 13:15:53 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*ft_traverse_str(char *s1)
+char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
-	while (*s1)
-		++s1;
-	return (s1);
-}
+	size_t	len1;
+	size_t	len2;
 
-char	*ft_strcat(char *s1, const char *s2)
-{
-	char	*temp;
-
-	temp = ft_traverse_str(s1);
-	ft_strcpy(temp, s2);
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	if (len2 < n)
+		ft_strcpy(&s1[len1], s2);
+	else
+	{
+		ft_strncpy(&s1[len1], s2, n);
+		s1[len1 + 1] = 0;
+	}
 	return (s1);
 }
