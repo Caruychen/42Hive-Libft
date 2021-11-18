@@ -16,6 +16,7 @@ p1/test_strcmp
 p1/test_strcpy
 p1/test_strdup
 p1/test_strlen
+p1/test_strncat
 p1/test_strncmp
 p1/test_strncpy
 p1/test_strnstr
