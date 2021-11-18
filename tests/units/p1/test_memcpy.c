@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 11:11:26 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/11 17:16:02 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/18 15:31:22 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,7 @@ static int	test_ints(int *src, int *controlDest, int *testDest, int length)
 	return (0);
 }
 
+/*
 static int	test_overlap(void)
 {
 	char	s1[] = "12345678";
@@ -176,7 +177,7 @@ static int	test_overlap(void)
 
 	return (0);
 }
-
+*/
 int	test_memcpy(void)
 {
 	char	src[11] = "Foo Bar!!!";
@@ -191,7 +192,7 @@ int	test_memcpy(void)
 	outcome = test_null() || outcome;
 	outcome = test_chars(src, controlDest, testDest, 10) || outcome;
 	outcome = test_ints(i_src, i_controlDest, i_testDest, 10) || outcome;
-	outcome = test_overlap() || outcome;
+//	outcome = test_overlap() || outcome;
 	print_outcome(outcome, __func__);
 	return (-outcome);
 }	
