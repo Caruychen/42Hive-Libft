@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 14:48:24 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/18 15:02:38 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/18 16:52:20 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ int	ft_run_tests(void)
 		test_strmapi,
 		test_strequ,
 		test_strnequ,
+		test_strsub,
 		test_putchar,
 		test_putstr,
 		test_putendl,

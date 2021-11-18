@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 11:01:07 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/18 15:02:31 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/18 16:52:05 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ int	test_strmap(void);
 int	test_strmapi(void);
 int	test_strequ(void);
 int	test_strnequ(void);
+int	test_strsub(void);
 int	test_putchar(void);
 int	test_putstr(void);
 int	test_putendl(void);
