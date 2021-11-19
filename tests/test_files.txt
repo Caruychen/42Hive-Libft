@@ -1,3 +1,4 @@
+p1/test_atoi
 p1/test_bzero
 p1/test_isalnum
 p1/test_isalpha
