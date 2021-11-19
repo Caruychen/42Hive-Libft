@@ -6,16 +6,11 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 10:55:49 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/19 13:18:59 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/19 15:44:01 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	is_delim(char s, char c)
-{
-	return (s == c);
-}
 
 static size_t	count_words(char const *s, char c)
 {
@@ -26,9 +21,9 @@ static size_t	count_words(char const *s, char c)
 	in_word = 0;
 	while (*s)
 	{
-		if (in_word && is_delim(*s, c))
+		if (in_word && *s == c)
 			in_word = 0;
-		if (!in_word && !is_delim(*s, c))
+		if (!in_word && *s != c)
 		{
 			++count;
 			in_word = 1;
@@ -40,7 +35,7 @@ static size_t	count_words(char const *s, char c)
 
 static void	seek_word(char const **s, char c)
 {
-	while (is_delim(**s, c))
+	while (**s == c)
 		++(*s);
 }
 
@@ -49,7 +44,7 @@ static size_t	get_word_length(char const *s, char c)
 	size_t	length;
 
 	length = 0;
-	while (*s && !is_delim(*s, c))
+	while (*s && *s != c)
 	{
 		++length;
 		++s;
