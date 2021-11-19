@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 14:46:31 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/19 15:15:25 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/19 15:38:40 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 static int	is_whitespace(char c)
 {
-	return (c == ' ' || c == '\t' || c == '\n');
+	return (c == ' ' || c == '\t' || c == '\n'
+		|| c == '\v' || c == '\f' || c == '\r');
 }
 
 static int	is_numeric(char c)
