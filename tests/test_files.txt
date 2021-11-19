@@ -45,6 +45,7 @@ p2/test_strmap
 p2/test_strmapi
 p2/test_strnequ
 p2/test_strnew
+p2/test_strsplit
 p2/test_strsub
 p2/test_strtrim
 utils/boolean_tests
