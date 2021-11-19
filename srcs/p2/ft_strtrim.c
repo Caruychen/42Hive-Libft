@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 21:35:37 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/19 10:08:05 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/19 11:23:53 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,10 @@ static size_t	get_length(char const *s)
 
 char	*ft_strtrim(char const *s)
 {
-	char	*str;
 	size_t	length;
 
 	while (is_whitespace(*s))
 		++s;
 	length = get_length(s);
-	str = (char *)malloc(sizeof(*str) * (length + 1));	
-	ft_memcpy(str, s, length);
-	str[length] = 0;
-	return (str);
+	return (ft_strsub(s, 0, length));
 }
