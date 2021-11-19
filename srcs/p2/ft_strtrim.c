@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 21:35:37 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/18 22:21:10 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/19 10:08:05 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ static size_t	get_length(char const *s)
 {
 	size_t	length;
 
+	if (!*s)
+		return (0);
 	length = seek_end(s) - s + 1;
 	return (length);
 }
