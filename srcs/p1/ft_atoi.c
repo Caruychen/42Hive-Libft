@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 14:46:31 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/19 15:08:20 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/19 15:15:25 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	ft_atoi(const char *str)
 	int	res;
 	int	sign;
 
-	while (is_whitespacce(*str))
+	while (is_whitespace(*str))
 		++str;
 	sign = parse_sign(&str);
 	res = 0;
@@ -47,8 +47,8 @@ int	ft_atoi(const char *str)
 	{
 		if (!is_numeric(*str))
 			break ;
-		result = result * 10 + *str - '0';
+		res = res * 10 + *str - '0';
 		++str;
 	}
-	return (sign * result);
+	return (sign * res);
 }
