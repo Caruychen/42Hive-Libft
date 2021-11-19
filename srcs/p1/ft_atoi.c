@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 14:46:31 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/19 15:38:40 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/19 16:21:11 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,8 @@ static int	is_numeric(char c)
 
 static int	parse_sign(const char **str)
 {
-	if (**str == '-')
-	{
-		++(*str);
-		return (-1);
-	}
-	if (**str == '+')
-		++(*str);
+	if (**str == '-' || **str == '+')
+		return (1 - 2 * (*(*str)++ == '-'));
 	return (1);
 }
 
