@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 11:01:07 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/19 15:24:06 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/21 11:09:07 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ int	test_strsub(void);
 int	test_strjoin(void);
 int	test_strtrim(void);
 int	test_strsplit(void);
+int	test_itoa(void);
 int	test_putchar(void);
 int	test_putstr(void);
 int	test_putendl(void);
