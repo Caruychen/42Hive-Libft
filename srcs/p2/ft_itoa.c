@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 15:55:29 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/19 16:37:37 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/21 10:59:06 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,12 @@ static void	setnbr(int n, char *str, size_t len)
 	if (ln < 0)
 	{
 		*str = '-';
-		--len;
 		ln = -ln;
 	}
 	while (len--)
 	{
-
+		*str[len] = ln % 10;
+		ln /= 10;
 	}
 }
 
@@ -53,4 +53,7 @@ char	*ft_itoa(int n)
 	str = (char *)malloc(sizeof(*str) * (len + 1));
 	if (!str)
 		return (NULL);
+	setnbr(n, str, len);
 	str[len] = 0;
+	return (str);
+}
