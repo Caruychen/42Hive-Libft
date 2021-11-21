@@ -26,10 +26,10 @@ $(NAME):
 	ranlib $(NAME)
 
 clean:
-	/bin/rm -f $(OBJECTS)
+	@rm -f $(OBJECTS)
 
 fclean: clean
-	/bin/rm $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
 
