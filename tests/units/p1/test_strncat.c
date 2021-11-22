@@ -6,15 +6,14 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 13:17:24 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/18 13:51:54 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/22 10:03:32 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "testft.h"
 
-static char	*init_string(int s1_len, int s2_len)
+static char	*init_string(size_t length)
 {
-	size_t	length = s1_len + s2_len + 1;
 	char	*str = (char *)malloc(sizeof(*str) * length);
 	bzero(str, length);
 	return (str);
@@ -30,8 +29,8 @@ static int	iterate_s1_lengths(size_t s1_len, size_t s2_len, size_t length, const
 {
 	size_t	index = 0;
 	size_t	index2 = 0;
-	char	*res = init_string(s1_len, s2_len);
-	char	*control = init_string(s1_len, s2_len);
+	char	*res = init_string(length);
+	char	*control = init_string(length);
 
 	while (index <= s1_len)
 	{
@@ -41,7 +40,7 @@ static int	iterate_s1_lengths(size_t s1_len, size_t s2_len, size_t length, const
 			set_new_str(res, length, index);
 			set_new_str(control, length, index);
 			res = ft_strncat(res, s2, index2);
-			control = ft_strncat(control, s2, index2);
+			control = strncat(control, s2, index2);
 			if (memcmp(res, control, length))
 			{
 				printf("FAILED: Error in ft_strncat\n");
