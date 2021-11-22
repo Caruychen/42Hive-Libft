@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 21:11:18 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/18 21:30:03 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/22 15:30:00 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,11 @@ int	cycle_strjoin_tests(void)
 {
 	char	*arr1[] = {
 		"The quick brown fox,", " jumped over the lazy white dog",
-		"foo", "bar", " ", "", "\0", "\n", "1" };
+		"foo", "bar", " ", "", "\0", "\n", "1", "malloc ???" };
 	char	*arr2[] = {
 		"The quick brown fox,", " jumped over the lazy white dog",
-		"foo", "bar", " ", "", "\0", "\n", "1" };
-	return (iterate_dual_arrays(arr1, arr2, 9, check_strjoin));
+		"foo", "bar", " ", "", "\0", "\n", "1", "where is my " };
+	return (iterate_dual_arrays(arr1, arr2, 10, check_strjoin));
 }
 
 int	test_strjoin(void)
