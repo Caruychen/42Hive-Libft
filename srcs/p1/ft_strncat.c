@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 12:47:02 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/18 13:15:53 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/22 10:04:14 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 	else
 	{
 		ft_strncpy(&s1[len1], s2, n);
-		s1[len1 + 1] = 0;
+		s1[len1 + n] = 0;
 	}
 	return (s1);
 }
