@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 12:53:32 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/11 17:13:12 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/22 15:56:37 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,22 @@ static int cycle_char_tests(void)
 	return (0);
 }
 
+static int	unicode_tests(void)
+{
+	int	c = L'ø';
+	
+	if (test_char(c) == -1)
+		return (-1);
+	return (0);
+}
+
 int	test_putchar_fd(void)
 {
 	int			outcome;
 
 	outcome = 0;
 	outcome = cycle_char_tests() || outcome;
+	outcome = unicode_tests() || outcome;
 	print_outcome(outcome, __func__);
 	return (-outcome);
 }
