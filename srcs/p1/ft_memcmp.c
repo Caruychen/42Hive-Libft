@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 09:40:13 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/22 10:31:31 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/22 11:01:48 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,8 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	ptr2 = s2;
 	while (n--)
 	{
-		if (*ptr1 != *ptr2)
-			return (*ptr1 - *ptr2);
-		++ptr1;
-		++ptr2;
+		if (*ptr1++ != *ptr2++)
+			return (*--ptr1 - *--ptr2);
 	}
 	return (0);
 }
