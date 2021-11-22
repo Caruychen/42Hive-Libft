@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 14:46:31 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/19 16:24:41 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/22 15:15:16 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,36 @@ static int	parse_sign(const char **str)
 	return (1);
 }
 
+static int	parse_numstr(const char *str, int base, int sign)
+{
+	long long	res;
+	long long	cutoff;
+	int			cutlim;
+
+	cutoff = 9223372036854775807;
+	cutlim = cutoff % base + '0';
+	cutoff /= base;
+	res = 0;
+	while (is_numeric(*str))
+	{
+		if (res > cutoff || (res == cutoff && *str > cutlim))
+		{
+			res = 0 - (sign > 0);
+			break ;
+		}
+		res = res * 10 + *str++ - '0';
+	}
+	return (res);
+}
+
 int	ft_atoi(const char *str)
 {
-	int	res;
-	int	sign;
+	int			sign;
+	int			res;
 
 	while (is_whitespace(*str))
 		++str;
 	sign = parse_sign(&str);
-	res = 0;
-	while (is_numeric(*str))
-		res = res * 10 + *str++ - '0';
+	res = parse_numstr(str, 10, sign);
 	return (sign * res);
 }
