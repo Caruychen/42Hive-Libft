@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 12:15:09 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/08 12:18:24 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/22 15:49:26 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,8 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	write(fd, &c, 1);
+	unsigned char	*ch;
+
+	ch = c;
+	write(fd, &ch, 1);
 }
