@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 09:06:39 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/16 10:24:27 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/22 10:56:16 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	run_comparisons(char *s1, char *s2)
 	int		res;
 	int		control;
 
-	n = find_max_len(s1, s2);
+	n = 8;
 	index = 0;
 	while (index < n + 1)
 	{
@@ -27,7 +27,7 @@ static int	run_comparisons(char *s1, char *s2)
 		control = strncmp(s1, s2, index);
 		if (res != control)
 		{
-			printf("FAILED: Error at ft_strncmp, with length %zu.\n", index);
+			printf("FAILED: Error at ft_strncmp, with length input: %zu.\n", index);
 			printf("s1: %s, s2: %s\nExpected: %d, got:%d\n", s1, s2, control, res);
 			return (-1);
 		}
@@ -39,11 +39,11 @@ static int	run_comparisons(char *s1, char *s2)
 static int	cycle_strncmp_tests(void)
 {
 	char *arr1[] = {
-		"foo bar", "foo\0bar", "", "\0", "\200", "a", "A", "\n" };
+		"foo bar", "foo\0bar", "foo\0foo", "", "\0", "\200", "a", "A", "\n" };
 	char *arr2[] = {
-		"foo bar", "foo\0bar", "", "\0", "\200", "a", "A", "\n" };
+		"foo bar", "foo\0bar", "foo\0foo", "", "\0", "\200", "a", "A", "\n" };
 
-	return(iterate_dual_arrays(arr1, arr2, 8, run_comparisons));
+	return(iterate_dual_arrays(arr1, arr2, 9, run_comparisons));
 }
 
 int			test_strncmp(void)
