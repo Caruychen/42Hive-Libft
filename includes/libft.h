@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 13:39:10 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/23 09:29:32 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/23 11:11:10 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,8 @@ typedef struct s_list
 	size_t			content_size;
 	struct s_list	*next;
 }		t_list;
+
 t_list	*ft_lstnew(void const *content, size_t content_size);
+void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 
 #endif
