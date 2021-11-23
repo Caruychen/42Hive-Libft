@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 14:48:24 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/23 10:59:32 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/23 13:20:46 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ int	ft_run_tests(void)
 		0};
 	int	(*ft_ptr_arr3[])(void) = {
 		test_lstnew,
+		test_lstdelone,
 		0};
 	int	index;
 	int	outcome = 0;
