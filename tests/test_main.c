@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 14:48:24 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/21 11:09:46 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/23 10:59:32 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,16 +69,35 @@ int	ft_run_tests(void)
 		test_putstr_fd,
 		test_putnbr_fd,
 		0};
+	int	(*ft_ptr_arr3[])(void) = {
+		test_lstnew,
+		0};
 	int	index;
+	int	outcome = 0;
 
 	index = 0;
 	while (ft_ptr_arr1[index])
-		ft_ptr_arr1[index++]();
-	printf("PART 1 TESTS OK!\n");
+		outcome = ft_ptr_arr1[index++]() || outcome;
+	if (outcome == 0)
+		printf("PART 1 TESTS OK!\n");
+	else
+		printf("FAILED PART 1 TESTS\n");
+	outcome = 0;
 	index = 0;
 	while (ft_ptr_arr2[index])
-		ft_ptr_arr2[index++]();
-	printf("PART 2 TESTS OK!\n");
+		outcome = ft_ptr_arr2[index++]() || outcome;
+	if (outcome == 0)
+		printf("PART 2 TESTS OK!\n");
+	else
+		printf("FAILED PART 2 TESTS\n");
+	outcome = 0;
+	index = 0;
+	while (ft_ptr_arr3[index])
+		outcome = ft_ptr_arr3[index++]() || outcome;
+	if (outcome == 0)
+		printf("BONUS TESTS OK!\n");
+	else
+		printf("FAILED BONUS TESTS\n");
 	return (0);
 }
 
