@@ -6,23 +6,12 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 14:46:31 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/22 17:18:51 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/23 13:40:54 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #define FT_LLONG_MAX 9223372036854775807
-
-static int	is_whitespace(char c)
-{
-	return (c == ' ' || c == '\t' || c == '\n'
-		|| c == '\v' || c == '\f' || c == '\r');
-}
-
-static int	is_numeric(char c)
-{
-	return (c >= '0' && c <= '9');
-}
 
 static int	parse_sign(const char **str)
 {
@@ -41,7 +30,7 @@ static int	parse_numstr(const char *str, int base, int sign)
 	cutlim = cutoff % base + '0';
 	cutoff /= base;
 	res = 0;
-	while (is_numeric(*str))
+	while (ft_isdigit(*str))
 	{
 		if (res > cutoff || (res == cutoff && *str > cutlim))
 		{
@@ -58,7 +47,7 @@ int	ft_atoi(const char *str)
 	int			sign;
 	int			res;
 
-	while (is_whitespace(*str))
+	while (ft_iswhitespace(*str))
 		++str;
 	sign = parse_sign(&str);
 	res = parse_numstr(str, 10, sign);
