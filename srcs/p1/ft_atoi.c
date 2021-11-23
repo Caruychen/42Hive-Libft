@@ -6,11 +6,12 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 14:46:31 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/22 15:15:16 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/22 17:18:51 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#define FT_LLONG_MAX 9223372036854775807
 
 static int	is_whitespace(char c)
 {
@@ -36,7 +37,7 @@ static int	parse_numstr(const char *str, int base, int sign)
 	long long	cutoff;
 	int			cutlim;
 
-	cutoff = 9223372036854775807;
+	cutoff = FT_LLONG_MAX;
 	cutlim = cutoff % base + '0';
 	cutoff /= base;
 	res = 0;
