@@ -6,11 +6,18 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 15:34:37 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/23 16:25:45 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/23 19:54:37 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "testft.h"
+
+static void	ft_putnstr(char *str, size_t n)
+{
+	while (n--)
+		write(1, str++, 1);
+	write(1, "\n", 1);
+}
 
 static int	test_null(void)
 {
@@ -34,18 +41,41 @@ static int	test_chars(char *src, char *controlDest, char *testDest, int c, int l
 	void	*ret1;
 	void	*ret2;
 	int		index;
+	long	ret_diff;
 
 	index = 0;
 	while (index < length + 1)
 	{
-		bzero(controlDest, index);
-		bzero(testDest, index);
+		memset(controlDest, 'x', length);
+		memset(testDest, 'x', length);
 		ret1 = memccpy(controlDest, src, c, index);
 		ret2 = ft_memccpy(testDest, src, c, index);
-		if (ret1 != ret2 || memcmp(controlDest, testDest, index) != 0)
+		if (memcmp(controlDest, testDest, length) != 0)
 		{
 			printf("FAILED: Error at ft_memccpy with test_chars\n");
+			printf("Expected:\n");
+			ft_putnstr(controlDest, length);
+			printf("Got:\n");
+			ft_putnstr(controlDest, length);
 			return (-1);
+		}
+		if (ret1 == NULL && ret2 != NULL)
+		{
+			printf("FAILED: Error at ft_memcpy with test_chars\n");
+			printf("Expected ft_memcpy to return NULL pointer, but got: %p\n", ret2);
+			return (-1);
+		}
+		if (ret1)
+		{
+			ret_diff = ret1 - (void *)controlDest;
+			if (ret2 != testDest + ret_diff)
+			{
+				printf("FAILED: Error at ft_memcpy with test_chars,\n");
+				printf("ft_memcpy returned an incorrect address.\n");
+				printf("Expected: %p\n", testDest + ret_diff);
+				printf("Got	: %p\n", ret2);
+				return (-1);
+			}
 		}
 		++index;
 	}
@@ -122,8 +152,8 @@ static int	test_ints_from_src(int *src, int *controlDest, int *testDest, int len
 int	test_memccpy(void)
 {
 	char	src[11] = "Foo Bar!!!";
-	char	controlDest[10] = {0};
-	char	testDest[10] = {0};
+	char	controlDest[20] = {0};
+	char	testDest[20] = {0};
 	int		i_src[11] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 	int		i_controlDest[10];
 	int		i_testDest[10];
@@ -131,9 +161,10 @@ int	test_memccpy(void)
 
 	outcome = 0;
 	outcome = test_null() || outcome;
-	outcome = test_chars(src, controlDest, testDest, '@', 10) || outcome;
-	outcome = test_chars(src, controlDest, testDest, 0, 10) || outcome;
-	outcome = test_chars_from_src(src, controlDest, testDest, 10) || outcome;
+	outcome = test_chars(src, controlDest, testDest, '@', 20) || outcome;
+	outcome = test_chars(src, controlDest, testDest, 0, 20) || outcome;
+	outcome = test_chars(src, controlDest, testDest, 'B', 20) || outcome;
+	outcome = test_chars_from_src(src, controlDest, testDest, 20) || outcome;
 	outcome = test_ints(i_src, i_controlDest, i_testDest, 127, 10) || outcome;
 	outcome = test_ints_from_src(i_src, i_controlDest, i_testDest, 10) || outcome;
 	print_outcome(outcome, __func__);
