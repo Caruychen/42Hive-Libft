@@ -41,7 +41,6 @@ jobs:
       - name: Check git status
         run: |
             cd ../intra-uuid-*
-            ls
             echo "::set-output name=GIT_STATUS::$(git status -s)"
         id: git-status
       # Add, Commit and Push to vogsphere
