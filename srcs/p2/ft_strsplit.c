@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 10:55:49 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/24 09:13:20 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/24 09:25:21 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ char	**ft_strsplit(char const *s, char c)
 		s = copy_word(temp, s, c);
 		if (*temp++ == NULL)
 		{
-			ft_delarray((void ***)&s_arr);
+			ft_strdelarray(&s_arr);
 			return (NULL);
 		}
 	}

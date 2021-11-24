@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_delarray.c                                      :+:      :+:    :+:   */
+/*   ft_strdelarray.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/24 08:54:44 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/24 09:12:25 by cchen            ###   ########.fr       */
+/*   Created: 2021/11/24 09:18:19 by cchen             #+#    #+#             */
+/*   Updated: 2021/11/24 09:24:12 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_delarray(void ***arr)
+void	ft_strdelarray(char ***arr)
 {
-	void	**temp;
+	char	**temp;
 
 	temp = *arr;
 	while (*temp)
-		ft_memdel(temp++);
+		ft_strdel(temp++);
 	free(*arr);
 	*arr = NULL;
 }
