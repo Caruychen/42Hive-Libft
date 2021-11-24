@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 11:01:07 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/23 13:19:35 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/24 22:10:51 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,5 +93,6 @@ int	test_putnbr_fd(void);
 // Tests for bonus
 int	test_lstnew(void);
 int	test_lstdelone(void);
+int	test_lstdel(void);
 
 #endif
