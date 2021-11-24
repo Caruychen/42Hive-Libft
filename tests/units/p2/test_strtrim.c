@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 09:38:41 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/19 10:28:17 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/24 08:14:06 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ static int	compare_result(char *s, char *expected)
 		free(res);
 		return (-1);
 	}
+	free(res);
 	return (0);
 }
 
