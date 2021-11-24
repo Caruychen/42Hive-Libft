@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/19 10:55:49 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/24 08:49:05 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/24 09:13:20 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,16 +61,6 @@ static char const	*copy_word(char **arr, char const *s, char c)
 	return (s + length);
 }
 
-static void	ft_delstrarr(char **arr)
-{
-	char	**temp;
-
-	temp = arr;
-	while (*temp)
-		ft_memdel((void **)temp++);
-	free(arr);
-}
-
 char	**ft_strsplit(char const *s, char c)
 {
 	char	**s_arr;
@@ -89,7 +79,7 @@ char	**ft_strsplit(char const *s, char c)
 		s = copy_word(temp, s, c);
 		if (*temp++ == NULL)
 		{
-			ft_delstrarr(s_arr);
+			ft_delarray((void ***)&s_arr);
 			return (NULL);
 		}
 	}
