@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 17:30:30 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/23 09:25:45 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/24 13:09:26 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,5 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 		list->content_size = 0;
 		return (list);
 	}
-	fill_list(&list, content, content_size);
-	return (list);
+	return (fill_list(&list, content, content_size));
 }
