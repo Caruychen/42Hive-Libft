@@ -17,7 +17,7 @@ BDIR = bonus/
 INCLUDES = includes/
 FUNCTIONS1 = memset bzero memcpy memccpy memmove memchr memcmp strlen strdup strcpy strncpy strcat strncat strlcat strchr strrchr strstr strnstr strcmp strncmp atoi isalpha isdigit isalnum isascii isprint toupper tolower
 FUNCTIONS2 = memalloc memdel strnew strdel strclr striter striteri strmap strmapi strequ strnequ strsub strjoin strtrim strsplit itoa putchar putstr putendl putnbr putchar_fd putstr_fd putendl_fd putnbr_fd
-FUNCTIONS_BONUS = lstnew lstdelone iswhitespace memdelarray strdelarray
+FUNCTIONS_BONUS = lstnew lstdelone lstdel iswhitespace memdelarray strdelarray
 OBJECTS = $(patsubst %, ft_%.o, $(FUNCTIONS1) $(FUNCTIONS2) $(FUNCTIONS_BONUS))
 
 all: $(NAME)
