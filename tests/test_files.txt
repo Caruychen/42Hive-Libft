@@ -1,6 +1,7 @@
 bonus/test_lstdelone
 bonus/test_lstdel
 bonus/test_lstadd
+bonus/test_lstiter
 bonus/test_lstnew
 p2/test_strnew
 p2/test_putchar

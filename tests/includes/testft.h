@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 11:01:07 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/25 15:32:25 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/25 16:54:03 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,5 +95,6 @@ int	test_lstnew(void);
 int	test_lstdelone(void);
 int	test_lstdel(void);
 int	test_lstadd(void);
+int	test_lstiter(void);
 
 #endif
