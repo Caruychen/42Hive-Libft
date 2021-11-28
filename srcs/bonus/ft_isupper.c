@@ -1,23 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_isupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/12 10:16:27 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/28 10:00:40 by cchen            ###   ########.fr       */
+/*   Created: 2021/11/28 09:59:23 by cchen             #+#    #+#             */
+/*   Updated: 2021/11/28 10:00:17 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_tolower(int c)
+int	ft_isupper(int c)
 {
-	int	gap;
-
-	gap = 'a' - 'A';
-	if (ft_isupper(c))
-		return (c + gap);
-	return (c);
+	return (c >= 'A' && c <= 'Z');
 }

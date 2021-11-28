@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 13:39:10 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/24 14:53:29 by cchen            ###   ########.fr       */
+/*   Updated: 2021/11/28 10:01:08 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,5 +91,6 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int		ft_iswhitespace(char c);
 void	ft_memdelarray(void ***arr);
 void	ft_strdelarray(char ***arr);
+int	ft_isupper(int c);
 
 #endif
