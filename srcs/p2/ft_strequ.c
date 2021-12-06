@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 10:37:29 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/16 10:39:02 by cchen            ###   ########.fr       */
+/*   Updated: 2021/12/06 21:16:04 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,5 @@
 
 int	ft_strequ(char const *s1, char const *s2)
 {
-	int	res;
-
-	res = ft_strcmp(s1, s2);
-	if (res)
-		return (0);
-	return (1);
+	return (ft_strcmp(s1, s2) == 0);
 }
