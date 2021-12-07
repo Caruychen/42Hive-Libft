@@ -40,7 +40,7 @@ jobs:
             /bin/bash ./${{ env.REPO_NAME }}/deploy_vogsphere.sh
       - name: Check git status
         run: |
-            cd ../${{ secrets.VOGSPHERE_REPO }}
+            cd ../intra-uuid-*
             echo "::set-output name=GIT_STATUS::$(git status -s)"
         id: git-status
       # Add, Commit and Push to vogsphere
