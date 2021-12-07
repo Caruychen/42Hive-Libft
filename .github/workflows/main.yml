@@ -39,6 +39,7 @@ jobs:
             cd ..
             /bin/bash ./${{ env.REPO_NAME }}/deploy_vogsphere.sh
       - name: Check git status
+        if: success() || failure()
         run: |
             cd ../intra-uuid-*
             echo "::set-output name=GIT_STATUS::$(git status -s)"
