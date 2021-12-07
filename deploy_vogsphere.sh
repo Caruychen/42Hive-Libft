@@ -6,7 +6,7 @@
 #    By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 13:56:45 by cchen             #+#    #+#              #
-#    Updated: 2021/12/07 12:18:22 by cchen            ###   ########.fr        #
+#    Updated: 2021/12/07 12:21:56 by cchen            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@
 rm -rf ./$VOGSPHERE/*
 cp ./$REPO_NAME/author ./$VOGSPHERE
 sed '/prod/,$d' ./$REPO_NAME/Makefile > ./$VOGSPHERE/Makefile
-cp ./$REPO_NAME/srcs/p1/* ./$VOGSPHERE
-cp ./$REPO_NAME/srcs/p2/* ./$VOGSPHERE
-cp ./$REPO_NAME/srcs/bonus/* ./$VOGSPHERE
-cp ./$REPO_NAME/includes/* ./$VOGSPHERE
+cp ./$REPO_NAME/srcs/p1/* ./$VOGSPHERE/
+cp ./$REPO_NAME/srcs/p2/* ./$VOGSPHERE/
+cp ./$REPO_NAME/srcs/bonus/* ./$VOGSPHERE/
+cp ./$REPO_NAME/includes/* ./$VOGSPHERE/
