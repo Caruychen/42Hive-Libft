@@ -6,7 +6,7 @@
 #    By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 13:56:45 by cchen             #+#    #+#              #
-#    Updated: 2021/12/07 12:23:44 by cchen            ###   ########.fr        #
+#    Updated: 2021/12/07 12:25:20 by cchen            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 # files, and places them in the root repositor for submission
 
 rm -rf ./$VOGSPHERE/*
-cp ./$REPO_NAME/author ./$VOGSPHERE/
+cp ./$REPO_NAME/author ./$VOGSPHERE/author
 sed '/prod/,$d' ./$REPO_NAME/Makefile > ./$VOGSPHERE/Makefile
 cp ./$REPO_NAME/srcs/p1/* ./$VOGSPHERE/
 cp ./$REPO_NAME/srcs/p2/* ./$VOGSPHERE/
