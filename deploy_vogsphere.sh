@@ -6,7 +6,7 @@
 #    By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 13:56:45 by cchen             #+#    #+#              #
-#    Updated: 2021/11/24 11:42:11 by cchen            ###   ########.fr        #
+#    Updated: 2021/12/07 12:02:50 by cchen            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@
 
 rm -rf ./intra-uuid-*/*
 cp ./$REPO_NAME/author ./intra-uuid-*
-cp ./$REPO_NAME/Makefile ./intra-uuid-*
+sed '/\nprod/,$d' ./$REPO_NAME/Makefile > ./intra-uuid-*/Makefile
 cp ./$REPO_NAME/srcs/p1/* ./intra-uuid-*
 cp ./$REPO_NAME/srcs/p2/* ./intra-uuid-*
 cp ./$REPO_NAME/srcs/bonus/* ./intra-uuid-*
