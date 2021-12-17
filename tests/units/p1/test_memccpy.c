@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 15:34:37 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/23 19:54:37 by cchen            ###   ########.fr       */
+/*   Updated: 2021/12/17 13:24:06 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	ft_putnstr(char *str, size_t n)
 		write(1, str++, 1);
 	write(1, "\n", 1);
 }
-
+/*
 static int	test_null(void)
 {
 	char	*src;
@@ -35,7 +35,7 @@ static int	test_null(void)
 	}
 	return (0);
 }
-
+*/
 static int	test_chars(char *src, char *controlDest, char *testDest, int c, int length)
 {
 	void	*ret1;
@@ -160,7 +160,7 @@ int	test_memccpy(void)
 	int		outcome;
 
 	outcome = 0;
-	outcome = test_null() || outcome;
+//	outcome = test_null() || outcome;
 	outcome = test_chars(src, controlDest, testDest, '@', 20) || outcome;
 	outcome = test_chars(src, controlDest, testDest, 0, 20) || outcome;
 	outcome = test_chars(src, controlDest, testDest, 'B', 20) || outcome;
