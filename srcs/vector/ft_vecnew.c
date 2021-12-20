@@ -6,13 +6,13 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 12:53:58 by cchen             #+#    #+#             */
-/*   Updated: 2021/12/20 15:12:40 by cchen            ###   ########.fr       */
+/*   Updated: 2021/12/20 15:17:51 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	vec_new(t_vec *dst, size_t init_alloc, size_t elem_size)
+int	ft_vecnew(t_vec *dst, size_t init_alloc, size_t elem_size)
 {
 	if (!dst || init_alloc == 0 || elem_size == 0)
 		return (-1);
