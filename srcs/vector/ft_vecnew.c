@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vec.h                                              :+:      :+:    :+:   */
+/*   ft_vecnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/20 11:01:19 by cchen             #+#    #+#             */
-/*   Updated: 2021/12/20 15:06:44 by cchen            ###   ########.fr       */
+/*   Created: 2021/12/20 12:53:58 by cchen             #+#    #+#             */
+/*   Updated: 2021/12/20 15:12:40 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef VEC_H
-# define VEC_H
+#include "libft.h"
 
-# include <string.h>
-
-typedef struct s_vec
+int	vec_new(t_vec *dst, size_t init_alloc, size_t elem_size)
 {
-	void			*memory;
-	size_t			elem_size;
-	size_t			alloc_size;
-	size_t			len;
-}		t_vec;
-
-int		ft_vecnew(t_vec *dst, size_t init_alloc, size_t elem_size);
-void	ft_vecfree(t_vec *src);
-
-#endif
+	if (!dst || init_alloc == 0 || elem_size == 0)
+		return (-1);
+	dst->alloc_size = init_alloc * elem_size;
+	dst->elem_size = elem_size;
+	dst->len = 0;
+	dst->memory = malloc(dst->alloc_size);
+	if (!dst->memory)
+	{
+		dst->alloc_size = 0;
+		dst->elem_size = 0;
+		return (-1);
+	}
+	return (dst->alloc_size);
+}

@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vec.h                                              :+:      :+:    :+:   */
+/*   ft_vecfree.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/20 11:01:19 by cchen             #+#    #+#             */
-/*   Updated: 2021/12/20 15:06:44 by cchen            ###   ########.fr       */
+/*   Created: 2021/12/20 15:05:04 by cchen             #+#    #+#             */
+/*   Updated: 2021/12/20 15:10:12 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef VEC_H
-# define VEC_H
+#include "libft.h"
 
-# include <string.h>
-
-typedef struct s_vec
+void	ft_vecfree(t_vec *src)
 {
-	void			*memory;
-	size_t			elem_size;
-	size_t			alloc_size;
-	size_t			len;
-}		t_vec;
-
-int		ft_vecnew(t_vec *dst, size_t init_alloc, size_t elem_size);
-void	ft_vecfree(t_vec *src);
-
-#endif
+	ft_memdel(&src->memory);
+	src->alloc_size = 0;
+	src->elem_size = 0;
+	src->len = 0;
+}
