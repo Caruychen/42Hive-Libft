@@ -61,3 +61,5 @@ p1/test_strlen
 p1/test_memcmp
 p1/test_isprint
 p1/test_memccpy
+vector/test_vecfree
+vector/test_vecnew

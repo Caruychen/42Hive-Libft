@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 11:01:07 by cchen             #+#    #+#             */
-/*   Updated: 2021/11/25 16:54:03 by cchen            ###   ########.fr       */
+/*   Updated: 2021/12/20 12:42:15 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@
 # include <stdio.h>
 # include <fcntl.h>
 # include <ctype.h>
+# include <assert.h>
 # include "libft.h"
+# include "vec.h"
+# include "testvec.h"
 
 // Utilities
 int		test_char_is(const char c, const char *f_name, int (*ft_fptr)(int c), int (*fptr)(int c));
