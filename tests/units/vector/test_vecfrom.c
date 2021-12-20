@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vec.h                                              :+:      :+:    :+:   */
+/*   test_vecfrom.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/20 11:01:19 by cchen             #+#    #+#             */
-/*   Updated: 2021/12/20 16:04:18 by cchen            ###   ########.fr       */
+/*   Created: 2021/12/20 15:59:20 by cchen             #+#    #+#             */
+/*   Updated: 2021/12/20 16:01:41 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef VEC_H
-# define VEC_H
+#include "testft.h"
 
-# include <string.h>
-
-typedef struct s_vec
+int	test_vecfrom(void)
 {
-	void			*memory;
-	size_t			elem_size;
-	size_t			alloc_size;
-	size_t			len;
-}		t_vec;
+	t_vec   t1;
+	int	base[] = {1, 2, 3, 4, 5};
+	
+	assert(ft_vecfrom(&t1, base, 5, sizeof(int)) > 0);
+	assert(memcmp(t1.memory, base, sizeof(base)) == 0);
+	ft_vecfree(&t1);
+	return (0);
+}
 
-int		ft_vecnew(t_vec *dst, size_t init_alloc, size_t elem_size);
-void	ft_vecfree(t_vec *src);
-int		ft_vecfrom(t_vec *dst, void *src, size_t len, size_t elem_size);
-
-#endif
