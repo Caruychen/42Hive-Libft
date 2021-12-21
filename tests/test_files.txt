@@ -65,3 +65,4 @@ vector/test_vecfrom
 vector/test_veccopy
 vector/test_vecfree
 vector/test_vecnew
+vector/test_vecresize
