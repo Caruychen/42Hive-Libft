@@ -6,7 +6,7 @@
 /*   By: cchen <cchen@student.hive.fi>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 13:39:10 by cchen             #+#    #+#             */
-/*   Updated: 2021/12/21 11:34:55 by cchen            ###   ########.fr       */
+/*   Updated: 2021/12/23 13:48:44 by cchen            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,5 +95,6 @@ void	ft_strdelarray(char ***arr);
 int		ft_isupper(int c);
 int		ft_islower(int c);
 int		ft_imin(const int n1, const int n2);
+int		ft_imax(const int n1, const int n2);
 
 #endif
